@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block head_title %} Home || {{ block.super }} {% endblock head_title %}
+
+{%  block content %}
+<p>
+    <h1>Pilih Menu.. </h1>
+</p>
+
+    <ul>
+        <li><a href="{% url 'base:create-mahasiswa' %}">Tambah Data Mahasiswa</a></li>
+        <li><a href="{% url 'base:create-penelitian' %}">Tambah Data Penelitian</a></li>
+        <li><a href="{% url 'lemlit:create-surat-penelitian-mahasiswa' %}">Pengajuan Surat Penelitian Mahasiswa</a></li>
+
+    </ul>
+
+
+{% endblock content %}

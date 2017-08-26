@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block head_title %} List Surat || {{ block.super }} {% endblock head_title %}
+
+{%  block content %}
+    <h1>{{ object.penelitian.judul }}, <small> {{ object.penelitian.lokasi }}</small></h1>
+    Author :
+        <ol>
+            {% for mhs in object.get_objects_mahasiswa %}
+                <li> {{ mhs.nama }} , {{ mhs.nim }}</li>
+            {% endfor %}
+        </ol>
+    <p>
+        <strong>Diinput</strong> sejak : {{ object.created|timesince }} yang lalu || <strong>Diupdate</strong> pada : {{ object.updated }}
+    </p>
+
+    <a href="{{ object.get_absolute_url_cetak_pdf }}">Cetak PDF</a>
+    <p>bulan ditambahkan database : {{ object.get_created_month_roman }}</p>
+
+{% endblock content %}

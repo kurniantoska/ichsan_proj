@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block head_title %} List Surat || {{ block.super }} {% endblock head_title %}
+
+{%  block content %}
+    <h1>List Surat Izin Penelitian Mahasiswa</h1>
+
+    <ul>
+        {% for obj in object_list %}
+            <li>
+                    <a href="{{ obj.get_absolute_url }}">{{ obj.penelitian.judul }}</a> ,
+                    {{ obj.penelitian.lokasi }}
+                <ul>
+                {% for mhs in obj.get_objects_mahasiswa %}
+                        <li>{{ mhs.nim }}, {{ mhs.nama }}</li>
+
+                {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

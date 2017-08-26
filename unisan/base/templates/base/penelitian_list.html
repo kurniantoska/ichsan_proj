@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block head_title %} List Penelitian || {{ block.super }} {% endblock head_title %}
+
+{%  block content %}
+    <h1>List Penelitian</h1>
+
+    <ul>
+        {% for obj in object_list %}
+            <li>
+                <p>{{ obj.judul }} , {{ obj.mahasiswa.first }}, {{ obj.lokasi }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

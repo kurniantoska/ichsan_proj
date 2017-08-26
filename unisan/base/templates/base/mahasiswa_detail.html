@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block head_title %} Mahasiswa || {{ block.super }} {% endblock head_title %}
+
+{%  block content %}
+    <h1>
+        {{ object.nama }}
+        <small>
+            {{ object.nim }}
+            <a href="#"> | Edit</a>
+        </small>
+    </h1>
+    <p>{{ object.email }}</p>
+{% endblock content %}

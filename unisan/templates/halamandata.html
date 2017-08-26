@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block head_title %} Home || {{ block.super }} {% endblock head_title %}
+
+{%  block content %}
+<p>
+    <h1>Data</h1>
+</p>
+
+    <ul>
+        <li>
+            <a href="{% url 'base:list-mahasiswa' %}">Data Mahasiswa</a>
+        </li>
+        <li>
+            <a href="{% url 'base:list-penelitian' %}">Data Judul Penelitian</a>
+        </li>
+        <li>
+            <a href="{% url 'lemlit:list-surat-penelitian-mahasiswa' %}">Data Surat Penelitian Mahasiswa</a>
+        </li>
+    </ul>
+
+
+{% endblock content %}
