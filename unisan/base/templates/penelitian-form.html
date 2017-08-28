@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
+{% load static %}
 {% block head_title %} Pengajuan Surat|| {{ block.super }} {% endblock head_title %}
 
 {%  block content %}
@@ -11,4 +12,6 @@
         {{ form|crispy }}
         <button class='btn-lg'  type="submit">Save</button>
     </form>
+<script type="text/javascript" src="{% static 'admin/js/vendor/jquery/jquery.js' %}"></script>
+{{ form.media }}
 {% endblock content %}

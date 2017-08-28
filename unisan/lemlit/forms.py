@@ -9,5 +9,6 @@ class SuraIzinPenelitianMahasiswaCreateForm(forms.ModelForm):
         model = SuratIzinPenelitianMahasiswa
         fields = [
             'disetujui',
-            'penelitian',
+            'penelitian', 
         ]
+

@@ -26,5 +26,5 @@ class PenelitianCreateForm(forms.ModelForm):
         )
 
         widgets = {
-            # 'mahasiswa': autocomplete.ModelSelect2Multiple(url='autocomplete-mahasiswa')
+            'mahasiswa': autocomplete.ModelSelect2(url='autocomplete-mahasiswa')
         }
