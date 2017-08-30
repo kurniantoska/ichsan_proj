@@ -1,10 +1,11 @@
 from dal import autocomplete
-
+from urllib import parse
 from django.shortcuts import render
 
 from django.views.generic import DetailView
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView
+from django.views.generic.edit import UpdateView
 from .forms import MahasiswaCreateForm, PenelitianCreateForm
 
 from .models import Mahasiswa, Penelitian
@@ -13,6 +14,24 @@ from .models import Mahasiswa, Penelitian
 class MahasiswaCreateView(CreateView):
     form_class = MahasiswaCreateForm
     template_name = 'mahasiswa-form.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(MahasiswaCreateView, self).get_context_data( **kwargs)
+        context['title'] = 'Tambah Data Mahasiswa'
+        return context
+
+class MahasiswaUpdateView(UpdateView):
+    form_class = MahasiswaCreateForm
+    template_name = 'mahasiswa-form.html'
+
+    def get_queryset(self):
+        return Mahasiswa.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super(MahasiswaUpdateView, self).get_context_data( **kwargs)
+        context['title'] = 'Update Data Mahasiswa'
+        return context
+
 
 class MahasiswaListView(ListView):
     def get_queryset(self):
@@ -31,11 +50,40 @@ class PenelitianListView(ListView):
     def get_queryset(self):
         return Penelitian.objects.all()
 
+class PenelitianDetailView(DetailView):
+    def get_queryset(self):
+        return Penelitian.objects.all()
+
+class MahasiswaHavePenelitianDetailView(DetailView):
+    def get_queryset(self):
+        return Mahasiswa.objects.none()
+    def get_context_data(self, **kwargs):
+            context = super(MahasiswaUpdateView, self).get_context_data(**kwargs)
+            context['title'] = 'Update Data Mahasiswa'
+            return context
+
+
 class MahasiswaAutoComplete(autocomplete.Select2QuerySetView):
     def get_queryset(self):
         qs = Mahasiswa.objects.all()
 
         if self.q :
             qs = qs.filter(nim__icontains=self.q)
+
+        return qs
+
+class PenelitianBaseFromMahasiswaAutoComplete(autocomplete.Select2QuerySetView):
+    def get_queryset(self):
+        init_qs = Mahasiswa.objects.all()
+
+        mhs_pk = self.forwarded.get('mhs', None)
+        # debug
+        # print('nilai mhs_pk -> {} '.format(mhs_pk))
+        if mhs_pk :
+            mhs_instance = init_qs.get(pk=mhs_pk)
+            qs = Penelitian.objects.filter(mahasiswa=mhs_instance)
+
+        if self.q :
+            qs = qs.filter(judul__icontains=self.q)
 
         return qs

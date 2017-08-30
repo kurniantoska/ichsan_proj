@@ -4,15 +4,17 @@
 {% block head_title %} Pengajuan Surat|| {{ block.super }} {% endblock head_title %}
 
 {%  block content %}
+<!--form untuk pengajuan surat penelitian mahasiswa-->
     <h1> ... </h1>
     {% if form.errors.non_field_errors %}
         {{ form.errors }}
     {% endif %}
     <form method="POST"> {% csrf_token %}
         {{ form|crispy }}
-        <button class="btn-lg" type="submit">Save</button>
+        <button class="btn-lg" type="submit">Buat Surat</button>
     </form>
 
-{{ form.media }}
 
+<script type="text/javascript" src="{% static 'admin/js/vendor/jquery/jquery.js' %}"></script>
+{{ form.media }}
 {% endblock content %}

@@ -9,11 +9,9 @@ class MahasiswaCreateForm(forms.ModelForm):
 
     class Meta:
         model = Mahasiswa
-        fields = [
-            'nama',
-            'nim',
-            'email',
-        ]
+        fields = '__all__'
+
+
 
 
 class PenelitianCreateForm(forms.ModelForm):
@@ -26,5 +24,5 @@ class PenelitianCreateForm(forms.ModelForm):
         )
 
         widgets = {
-            'mahasiswa': autocomplete.ModelSelect2(url='autocomplete-mahasiswa')
+            'mahasiswa': autocomplete.ModelSelect2Multiple(url='autocomplete-mahasiswa')
         }

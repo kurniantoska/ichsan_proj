@@ -4,11 +4,32 @@
 {%  block content %}
     <h1>List Penelitian</h1>
 
-    <ul>
-        {% for obj in object_list %}
-            <li>
-                <p>{{ obj.judul }} , {{ obj.mahasiswa.first }}, {{ obj.lokasi }}</p>
-            </li>
-        {% endfor %}
-    </ul>
+<div class="penelitian-list">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>Mahasiswa</th>
+          <th>Judul</th>
+          <th>Lokasi</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for obj in object_list%}
+        <tr>
+            <th scope="row">{{ obj.id }}</th>
+            <td>
+                {% for mhs in obj.mahasiswa.all %}
+                {{ mhs.nim }},
+                {% endfor %}
+
+            </td>
+            <td>{{ obj.judul }}</td>
+            <td>{{ obj.lokasi }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+
+</div>
 {% endblock content %}

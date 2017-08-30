@@ -2,12 +2,34 @@
 {% block head_title %} Mahasiswa || {{ block.super }} {% endblock head_title %}
 
 {%  block content %}
-    <h1>
-        {{ object.nama }}
-        <small>
-            {{ object.nim }}
-            <a href="#"> | Edit</a>
-        </small>
-    </h1>
-    <p>{{ object.email }}</p>
+<h1>
+    {{ object.nama }},
+    <small>
+        {{ object.nim }}
+        <a href="{{ object.get_absolute_url_update }}"> | Edit</a>
+    </small>
+</h1>
+<p>
+    {% if object.email %}
+        Email : {{ object.email }}
+    {% else %}
+        Email belum diinput
+    {% endif %}
+
+</p>
+<p>
+    {% if object.penelitian_set.all %}
+    <h3>Data Penelitian</h3>
+        <ul>
+        {% for jdl in object.penelitian_set.all %}
+        <li> {{ jdl.judul }} <br/>
+            Lokasi : {{ jdl.lokasi }}
+        </li>
+        {% endfor%}
+        </ul>
+    {% else %}
+        Data Penelitian Tidak di temukan
+    {% endif %}
+
+</p>
 {% endblock content %}

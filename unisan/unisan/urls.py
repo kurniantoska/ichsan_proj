@@ -17,7 +17,10 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.views.generic import TemplateView
 
-from base.views import MahasiswaAutoComplete
+from base.views import (
+MahasiswaAutoComplete,
+PenelitianBaseFromMahasiswaAutoComplete,
+)
 
 urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='home.html'), name='home'),
@@ -26,5 +29,6 @@ urlpatterns = [
     url(r'^lemlit/', include('lemlit.urls', namespace='lemlit')),
     url(r'^data/', include('base.urls', namespace='base')),
     url(r'^api-mhs-get/$', MahasiswaAutoComplete.as_view(), name='autocomplete-mahasiswa'),
+    url(r'^api-penelitian-get/$', PenelitianBaseFromMahasiswaAutoComplete.as_view(), name='autocomplete-penelitian-base-mahasiswa'),
 
 ]

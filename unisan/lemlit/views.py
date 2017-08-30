@@ -2,20 +2,42 @@ from django.shortcuts import render
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import A4
 
+import json
 from django.http import HttpResponse
 
 from django.views.generic import DetailView
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView
 
+from base.models import Mahasiswa
 from lemlit.models import SuratIzinPenelitianMahasiswa
 from .forms import SuraIzinPenelitianMahasiswaCreateForm
 
 # Create your views here.
 
+def get_penelitian_form_mahasiswa(self, mahasiswa=Mahasiswa.objects.get(pk=6)):
+    mahasiswa = mahasiswa.penelitian_set.all()
+    return mahasiswa
+
+
+def ajax_region_from_zip(request, mahasiswa):
+
+    # do your logic to lookup the zipcode from the region
+    penelitian, lookup_success = get_penelitian_form_mahasiswa(mahasiswa)
+
+    response = Response(content_type='application/json')
+    response.write(json.dumps({"success":lookup_success, "penelitian":penelitian}))
+    return response
+
 class SuratIzinPenelitianMahasiswaCreateView(CreateView):
     form_class = SuraIzinPenelitianMahasiswaCreateForm
     template_name = 'form.html'
+
+    def get_context_data(self, **kwargs):
+        print(kwargs)
+        context = super(SuratIzinPenelitianMahasiswaCreateView, self).get_context_data( **kwargs)
+        context['penelitian_base_mahasiswa'] = 'Update Data Mahasiswa'
+        return context
 
 class SuraIzinPenelitianMahasiswaListView(ListView):
     def get_queryset(self):

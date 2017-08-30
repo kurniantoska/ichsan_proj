@@ -1,0 +1,7 @@
+/*** css untuk mengatur padding excel ***/
+
+.penelitian-list .table td, .table th {
+    padding: .12rem;
+    vertical-align: top;
+    border-top: 1px solid #e9ecef;
+}

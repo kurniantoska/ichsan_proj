@@ -8,17 +8,18 @@ User = settings.AUTH_USER_MODEL
 
 # Create your models here.
 class SuratIzinPenelitianMahasiswa(models.Model):
+
+    mahasiswa           = models.ForeignKey(Mahasiswa, null=True, blank=True)
+    penelitian          = models.ForeignKey(Penelitian)
     created             = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     updated             = models.DateTimeField(auto_now=True, null=True, blank=True)
     disetujui           = models.BooleanField(default=False)
-    penelitian          = models.OneToOneField(Penelitian)
+    distempel           = models.BooleanField(default=False)
+
 
     def get_created_month_roman(self):
         bulan = self.created.month
         return write_roman(bulan)
-
-    def get_objects_mahasiswa(self):
-        return self.penelitian.mahasiswa.all()
 
     def get_penelitian_judul(self):
         return self.penelitian.judul
@@ -29,8 +30,11 @@ class SuratIzinPenelitianMahasiswa(models.Model):
     def get_absolute_url_cetak_pdf(self):
         return reverse('lemlit:cetak-surat-penelitian-mahasiswa', kwargs={'pk' : self.id})
 
+    def get_objects_mahasiswa(self):
+        return object_list = self.mahasiswa.all()
+
     def __str__(self):
-        return "{} - {}".format(self.penelitian.mahasiswa.first(), self.penelitian.judul)
+        return self.penelitian.judul
 
 class StrukturManajemen(models.Model):
     nama_dosen          = models.ForeignKey(Dosen)

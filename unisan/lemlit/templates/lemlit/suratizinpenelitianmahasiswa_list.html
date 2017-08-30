@@ -7,8 +7,8 @@
     <ul>
         {% for obj in object_list %}
             <li>
-                    <a href="{{ obj.get_absolute_url }}">{{ obj.penelitian.judul }}</a> ,
-                    {{ obj.penelitian.lokasi }}
+                <a href="{{ obj.get_absolute_url }}">{{ obj.penelitian.judul }}</a> ,
+                {{ obj.penelitian.lokasi }}
                 <ul>
                 {% for mhs in obj.get_objects_mahasiswa %}
                         <li>{{ mhs.nim }}, {{ mhs.nama }}</li>
