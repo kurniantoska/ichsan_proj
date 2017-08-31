@@ -8,9 +8,11 @@ User = settings.AUTH_USER_MODEL
 
 # Create your models here.
 class SuratIzinPenelitianMahasiswa(models.Model):
-
+    nomor_surat         = models.CharField(unique=True, max_length=50)
     mahasiswa           = models.ForeignKey(Mahasiswa, null=True, blank=True)
     penelitian          = models.ForeignKey(Penelitian)
+    nama_instansi       = models.CharField(max_length=80)
+    tujuan_surat        = models.CharField(max_length=20)
     created             = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     updated             = models.DateTimeField(auto_now=True, null=True, blank=True)
     disetujui           = models.BooleanField(default=False)
@@ -30,8 +32,8 @@ class SuratIzinPenelitianMahasiswa(models.Model):
     def get_absolute_url_cetak_pdf(self):
         return reverse('lemlit:cetak-surat-penelitian-mahasiswa', kwargs={'pk' : self.id})
 
-    def get_objects_mahasiswa(self):
-        return object_list = self.mahasiswa.all()
+    # def get_objects_mahasiswa(self):
+    #     return object_list = self.mahasiswa.all()
 
     def __str__(self):
         return self.penelitian.judul

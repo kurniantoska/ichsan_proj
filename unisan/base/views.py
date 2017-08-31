@@ -9,6 +9,7 @@ from django.views.generic.edit import UpdateView
 from .forms import MahasiswaCreateForm, PenelitianCreateForm
 
 from .models import Mahasiswa, Penelitian
+from lemlit.models import SuratIzinPenelitianMahasiswa
 # Create your views here.
 
 class MahasiswaCreateView(CreateView):
@@ -74,14 +75,16 @@ class MahasiswaAutoComplete(autocomplete.Select2QuerySetView):
 
 class PenelitianBaseFromMahasiswaAutoComplete(autocomplete.Select2QuerySetView):
     def get_queryset(self):
-        init_qs = Mahasiswa.objects.all()
+        semua_mahasiswa = Mahasiswa.objects.all()
 
         mhs_pk = self.forwarded.get('mhs', None)
         # debug
         # print('nilai mhs_pk -> {} '.format(mhs_pk))
         if mhs_pk :
-            mhs_instance = init_qs.get(pk=mhs_pk)
-            qs = Penelitian.objects.filter(mahasiswa=mhs_instance)
+            mhs_instance = semua_mahasiswa.get(pk=mhs_pk)
+            list_penelitian_mhs_instance = Penelitian.objects.filter(mahasiswa=mhs_instance)
+            list_penelitian_mhs_instance_not_exists_in_suratizinpenelitianmahasiswa = list_penelitian_mhs_instance.exclude(suratizinpenelitianmahasiswa__isnull=False)
+            qs = list_penelitian_mhs_instance_not_exists_in_suratizinpenelitianmahasiswa
 
         if self.q :
             qs = qs.filter(judul__icontains=self.q)

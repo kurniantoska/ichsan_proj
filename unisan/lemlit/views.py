@@ -31,7 +31,7 @@ def ajax_region_from_zip(request, mahasiswa):
 
 class SuratIzinPenelitianMahasiswaCreateView(CreateView):
     form_class = SuraIzinPenelitianMahasiswaCreateForm
-    template_name = 'form.html'
+    template_name = 'form-surat-izin-penelitian-mhs.html'
 
     def get_context_data(self, **kwargs):
         print(kwargs)
