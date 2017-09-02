@@ -10,7 +10,7 @@
     {% endif %}
     <form method="POST"> {% csrf_token %}
         {{ form|crispy }}
-        <button class='btn-lg'  type="submit">Save</button>
+        <button class='btn-lg'  type="submit">Simpan</button>
     </form>
 <script type="text/javascript" src="{% static 'admin/js/vendor/jquery/jquery.js' %}"></script>
 {{ form.media }}

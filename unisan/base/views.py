@@ -47,6 +47,11 @@ class PenelitianCreateView(CreateView):
     form_class = PenelitianCreateForm
     template_name = 'penelitian-form.html'
 
+class PenelitianUpdateView(UpdateView):
+    model = Penelitian
+    form_class = PenelitianCreateForm
+    template_name = 'penelitian-form.html'
+
 class PenelitianListView(ListView):
     def get_queryset(self):
         return Penelitian.objects.all()

@@ -4,18 +4,12 @@
 {%  block content %}
     <h1>List Surat Izin Penelitian Mahasiswa</h1>
 
-    <ul>
+    <ol>
         {% for obj in object_list %}
             <li>
                 <a href="{{ obj.get_absolute_url }}">{{ obj.penelitian.judul }}</a> ,
-                {{ obj.penelitian.lokasi }}
-                <ul>
-                {% for mhs in obj.get_objects_mahasiswa %}
-                        <li>{{ mhs.nim }}, {{ mhs.nama }}</li>
-
-                {% endfor %}
-                </ul>
+                {{ obj.penelitian.lokasi }}, {{ obj.mahasiswa.nim }}
             </li>
         {% endfor %}
-    </ul>
+    </ol>
 {% endblock content %}

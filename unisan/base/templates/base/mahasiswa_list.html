@@ -2,7 +2,9 @@
 {% block head_title %} List Surat || {{ block.super }} {% endblock head_title %}
 
 {%  block content %}
-    <h1>List Mahasiswa</h1>
+    <h1>
+        List Mahasiswa <small><a class="btn btn-primary" href="{% url 'base:create-mahasiswa' %}">+New</a></small>
+    </h1>
 
     <ul>
         {% for obj in object_list %}

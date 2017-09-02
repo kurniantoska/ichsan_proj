@@ -5,13 +5,13 @@
 
 {%  block content %}
 <!--form untuk pengajuan surat penelitian mahasiswa-->
-    <h1> ... </h1>
+    <h1> {{ status }} Surat Izin Penelitian Mahasiswa </h1>
     {% if form.errors.non_field_errors %}
         {{ form.errors }}
     {% endif %}
     <form method="POST"> {% csrf_token %}
         {{ form|crispy }}
-        <button class="btn-lg" type="submit">Buat Surat</button>
+        <button class="btn-lg" type="submit">Simpan</button>
     </form>
 
 

@@ -10,9 +10,29 @@ class Mahasiswa(models.Model):
             ('man', 'Manajemen'),
             )
         ),
+        ('Fakultas Ilmu Komputer', (
+            ('si', 'Sistem Informasi'),
+            ('ti', 'Teknik Informatika'),
+         )
+         ),
+        ('Fakultas Hukum', (
+            ('pe', 'Perdata'),
+            ('pi', 'Pidana'),
+         )
+         ),
         ('Fakultas Teknik', (
             ('ar', 'Arsitektur'),
             ('el', 'Elektro'),
+        )
+        ),
+        ('Fakultas Ilmu Sosial, Ilmu Politik', (
+            ('ko', 'Komunikasi'),
+            ('ad', 'Administrasi'),
+        )
+        ),
+        ('Fakultas Pertanian', (
+            ('ab', 'Agribisnis'),
+            ('thp', 'Teknologi Hasil Pertanian'),
         )
         ),
     )
@@ -34,12 +54,18 @@ class Mahasiswa(models.Model):
     def get_absolute_url_update(self):
         return reverse('base:update-mahasiswa', kwargs={'pk': self.id})
 
+    def save(self):
+        self.nim = self.nim.upper()
+        self.nama = self.nama.title()
+        super(Mahasiswa, self).save()
 
     class Meta :
         ordering = ['nim']
 
 class Dosen(models.Model):
-    nama        = models.CharField(max_length=120)
+    gelar_depan     = models.CharField(max_length=20)
+    nama            = models.CharField(max_length=120)
+    gelar_belakang  = models.CharField(max_length=20)
     nidn        = models.CharField(max_length=20, default='1234567890')
     email       = models.EmailField(null=True, blank=True)
 
@@ -49,11 +75,21 @@ class Dosen(models.Model):
 class Penelitian(models.Model):
     dosen       = models.ManyToManyField(Dosen, blank=True)
     mahasiswa   = models.ManyToManyField(Mahasiswa, blank=True)
-    judul       = models.CharField(max_length=200)
+    judul       = models.CharField(unique=True, max_length=200)
     lokasi      = models.CharField(max_length=120, null=True, blank=True)
 
     def get_absolute_url(self):
         return reverse('base:detail-penelitian', kwargs={'pk':self.id})
 
+    def get_absolute_url_update(self):
+        return reverse('base:update-penelitian', kwargs={'pk':self.id})
+
+    def get_all_mhs_in_penelitian(self):
+        return self.mahasiswa.all()
+
     def __str__(self):
         return self.judul
+
+    def save(self):
+        self.judul = self.judul.lower()
+        super(Penelitian, self).save()

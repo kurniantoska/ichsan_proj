@@ -3,10 +3,21 @@
 
 {%  block content %}
     <h1>
-        {{ object.judul }}
+        {{ object.judul|title }}
         <small>
-            {{ object.lokasi }}
-            | <a href="#">Edit</a>
+            <a class="btn btn-primary" href="{{ object.get_absolute_url_update }}">Edit</a>
         </small>
     </h1>
+
+    <p>
+    Mahasiswa :
+    <ul>
+    {% for mhs in object.get_all_mhs_in_penelitian %}
+        <li>{{ mhs }}</li>
+    {% endfor %}
+    </ul>
+    </p>
+    <p>
+    Lokasi Penelitian : {{ object.lokasi }}
+    </p>
 {% endblock content %}

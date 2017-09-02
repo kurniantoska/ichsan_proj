@@ -2,13 +2,15 @@
 {% block head_title %} List Penelitian || {{ block.super }} {% endblock head_title %}
 
 {%  block content %}
-    <h1>List Penelitian</h1>
+    <h1>List Penelitian
+        <small><a class="btn btn-primary" href="{% url 'base:create-penelitian' %}">+New</a></small>
+    </h1>
 
 <div class="penelitian-list">
     <table class="table">
       <thead>
         <tr>
-          <th>id</th>
+          <th>#</th>
           <th>Mahasiswa</th>
           <th>Judul</th>
           <th>Lokasi</th>
@@ -17,14 +19,15 @@
       <tbody>
       {% for obj in object_list%}
         <tr>
-            <th scope="row">{{ obj.id }}</th>
+            <th scope="row">{{ forloop.counter }} </th>
             <td>
                 {% for mhs in obj.mahasiswa.all %}
                 {{ mhs.nim }},
                 {% endfor %}
 
             </td>
-            <td>{{ obj.judul }}</td>
+
+            <td><a href ="{{ obj.get_absolute_url  }}">{{ obj.judul }}</a></td>
             <td>{{ obj.lokasi }}</td>
         </tr>
       {% endfor %}

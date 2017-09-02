@@ -7,8 +7,7 @@
 <h1>Pilih Menu.. </h1>
 <div class="card">
   <div class="card-header">
-      Lakukan proses berikut untuk data mahasiswa yang belum terdaftar sebelumnya..
-  </div>
+      Lakukan proses berikut untuk mahasiswa yang belum terdaftar di sistem lemlit  </div>
   <div class="card-block">
     <p class="card-text">
       <ol>
@@ -16,6 +15,15 @@
         <li><a href="{% url 'base:create-penelitian' %}">Tambah Data Penelitian</a></li>
         <li><a href="{% url 'lemlit:create-surat-penelitian-mahasiswa' %}">Pengajuan Surat Penelitian Mahasiswa</a></li>
         </ol>
+  </div>
+</div>
+<br/>
+<div class="card">
+  <div class="card-header">
+      Data yang sudah tersedia di sistem lemlit dapat diakses pada menu 'Data' di link navigasi</div>
+  <div class="card-block">
+    <p class="card-text">
+      <ul><li><a href="{% url 'cari-data' %}">Data</a></li></ul>
   </div>
 </div>
 

@@ -1,19 +1,22 @@
 {% extends 'base.html' %}
-{% block head_title %} List Surat || {{ block.super }} {% endblock head_title %}
+{% block head_title %} {{ object.penelitian.judul }} | {{ block.super }} {% endblock head_title %}
 
 {%  block content %}
-    <h1>{{ object.penelitian.judul }}, <small> {{ object.penelitian.lokasi }}</small></h1>
-    Author :
-        <ol>
-            {% for mhs in object.get_objects_mahasiswa %}
-                <li> {{ mhs.nama }} , {{ mhs.nim }}</li>
-            {% endfor %}
-        </ol>
-    <p>
-        <strong>Diinput</strong> sejak : {{ object.created|timesince }} yang lalu || <strong>Diupdate</strong> pada : {{ object.updated }}
-    </p>
+    <small>Surat Izin Penelitian Mahasiswa</small>
+    <h1>{{ object.penelitian.judul }} <small> <a class="btn btn-primary" href="{{ object.get_absolute_url_update }}">Edit</a> </small></h1>
+    <ul>
+        <li>Lokasi : {{ object.penelitian.lokasi }}</li>
+        <li>Pengirim Surat : {{ object.mahasiswa.nama }}, </li>
+        <li>NIM : {{ object.mahasiswa.nim }}</li>
+        <li> {{ object.get_fakultas }}, Program Studi : {{ object.get_program_studi_name }}</li>
+        <li>
+            <strong>Diinput</strong> sejak : {{ object.created|timesince }} yang lalu || <strong>Diupdate</strong> pada : {{ object.updated }}
+        </li>
 
-    <a href="{{ object.get_absolute_url_cetak_pdf }}">Cetak PDF</a>
-    <p>bulan ditambahkan database : {{ object.get_created_month_roman }}</p>
+    </ul>
+
+    <a class="btn btn-primary" href="{{ object.get_absolute_url_cetak_pdf }}" onclick="window.open(this.href, '_blank', 'width=750,height=600').print(); return false">Cetak Surat</a>
+
+{#    <p>bulan ditambahkan database : {{ object.get_created_month_roman }}</p>#}
 
 {% endblock content %}

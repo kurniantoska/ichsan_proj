@@ -23,5 +23,8 @@ class SuraIzinPenelitianMahasiswaCreateForm(forms.ModelForm):
         fields = (
             'mahasiswa',
             'penelitian',
+            'nomor_surat',
+            'nama_instansi',
+            'tujuan_surat',
         )
 

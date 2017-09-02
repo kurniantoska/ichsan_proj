@@ -31,17 +31,18 @@
     }
 
     body {
-        margin-left: .8in;
+        margin-left: .5in;
     }
 
 
 </style>
 </head>
+{% load static %}
 <div class="headerkop">
     <table>
     <tbody>
         <tr>
-        <td><img src="https://ikhsandatuamas.files.wordpress.com/2014/02/mayang.jpg" width="90" height="91" /></td>
+        <td><img src="{% static 'lemlit.png' %}" height="91" /></td>
         <td>
         <p lang="id-ID" style="text-align: center;"><span style="color: #ff0000;"><strong>KEMENTERIAN RISET, TEKNOLOGI DAN PENDIDIKAN TINGGI</strong></span></p>
         <p lang="id-ID" style="text-align: center;"><span style="color: #ff0000;"><strong>LEMBAGA PENELITIAN (LEMLIT)</strong></span></p>
@@ -62,7 +63,7 @@
 <tr>
 <td>Nomor</td>
 <td>:</td>
-<td>026/LEMLIT-UNISAN/GTO/VIII/2017</td>
+<td>{{ object.nomor_surat }}/LEMLIT-UNISAN/GTO/{{ object.get_created_month_roman }}/{{ object.created.year }}</td>
 </tr>
 <tr>
 <td>Lampiran</td>
@@ -85,7 +86,7 @@
 </tr>
 <tr>
 <td style="width: 88px;">&nbsp;</td>
-<td style="width: 508px;">Instansi TujuanSurat</td>
+<td style="width: 508px;">{{ object.nama_instansi }}</td>
 </tr>
 <tr>
 <td style="width: 88px;">&nbsp;di,-</td>
@@ -93,7 +94,7 @@
 </tr>
 <tr>
 <td style="width: 88px;">&nbsp;</td>
-<td style="width: 508px;">Gorontalo</td>
+<td style="width: 508px;">{{ object.tujuan_surat }}</td>
 </tr>
 </tbody>
 </table>
@@ -110,12 +111,12 @@
 <tr>
 <td style="width: 227px;">Nama</td>
 <td style="width: 19px;">:</td>
-<td style="width: 336px;">KetuaLemlit</td>
+<td style="width: 336px;">{{ object.get_ketua_lemlit_name.nama_dosen.nama }}</td>
 </tr>
 <tr>
 <td style="width: 227px;">NIDN</td>
 <td style="width: 19px;">:</td>
-<td style="width: 336px;">0909094234</td>
+<td style="width: 336px;">{{ object.get_ketua_lemlit_name.nama_dosen.nidn }}</td>
 </tr>
 <tr>
 <td style="width: 227px;">Jabatan</td>
@@ -139,32 +140,32 @@
     <tr>
     <td style="width: 163px;">Nama Mahasiswa</td>
     <td style="width: 10px;">:</td>
-    <td style="width: 486px;">Superman</td>
+    <td style="width: 486px;">{{ object.mahasiswa.nama }}</td>
     </tr>
     <tr>
     <td style="width: 163px;">NIM</td>
     <td style="width: 10px;">:</td>
-    <td style="width: 486px;">ERsgsdgs sdgsd&nbsp;</td>
+    <td style="width: 486px;">{{ object.mahasiswa.nim|upper }}</td>
     </tr>
     <tr>
     <td style="width: 163px;">Fakultas</td>
     <td style="width: 10px;">:</td>
-    <td style="width: 486px;">EKONOMI</td>
+    <td style="width: 486px;">{{ object.get_fakultas }}</td>
     </tr>
     <tr>
     <td style="width: 163px;">Program Studi</td>
     <td style="width: 10px;">:</td>
-    <td style="width: 486px;">MANAJEMEN</td>
+    <td style="width: 486px;">{{ object.get_program_studi_name }}</td>
     </tr>
     <tr>
     <td style="width: 163px;">Lokasi Penelitian</td>
     <td style="width: 10px;">:</td>
-    <td style="width: 486px;">Isian Lokasi Penelitian</td>
+    <td style="width: 486px;">{{ object.penelitian.lokasi }}</td>
     </tr>
     <tr>
     <td style="width: 163px;">Judul Penelitian</td>
     <td style="width: 10px;">:</td>
-    <td style="width: 486px;">&nbsp;Eum facete intellegat ei, ut mazim melius usu. Has elit simul primis ne, regione minimum id cum. Sea deleniti dissentiet ea. Illud mollis moderatius ut per, at qui ubique populo. Eum ad cibo legimus, vim ei quidam fastidii.</td>
+    <td style="width: 486px;">{{ object.penelitian.judul|title }}</td>
     </tr>
     </tbody>
     </table>
@@ -183,13 +184,13 @@
 <td style="width: 335px;">&nbsp;</td>
 <td style="width: 257px;">
 <div class="tandatanganketua">
-    <p>Gorontalo, Tanggal, Bulan Tahun</p>
+    <p>Gorontalo, {{ object.created.date|date:'d F Y' }}</p>
     <p>Ketua,</p>
     <p>&nbsp;</p>
     <p>&nbsp;</p>
     <p>&nbsp;</p>
-    <p><span style="text-decoration: underline;"><strong>NamaKEtuaLemlit</strong></span></p>
-    <p><strong>NIDN</strong></p>
+    <p><span style="text-decoration: underline;"><strong>{{ object.get_ketua_lemlit_name.nama_dosen.nama }}</strong></span></p>
+    <p><strong>NIDN {{ object.get_ketua_lemlit_name.nama_dosen.nidn }}</strong></p>
 </div>
 </td>
 </tr>
@@ -197,7 +198,7 @@
 </table>
 <p>&nbsp;+</p>
 <div class="footer-petugas">
-    <p>admin : ..</p>
+{#    <p>admin : ..</p>#}
 </div>
 
 </html>
