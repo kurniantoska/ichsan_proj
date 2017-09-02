@@ -6,6 +6,7 @@ SuraIzinPenelitianMahasiswaDetailView,
 SuraIzinPenelitianMahasiswaListView,
 SuratIzinPenelitianMahasiswaCreateView,
 SuratIzinPenelitianMahasiswaUpdateView,
+SuratIzinPenelitianMahasiswaDeleteView,
 CetakSuratIzinPenelitianMahasiswa
 )
 
@@ -17,5 +18,6 @@ urlpatterns = [
     url(r'^cetak-surat-penelitian-mahasiswa/(?P<pk>\d+)/$', CetakSuratIzinPenelitianMahasiswa.as_view(), name='cetak-surat-penelitian-mahasiswa'),
     url(r'^create-surat-penelitian-mahasiswa/$', SuratIzinPenelitianMahasiswaCreateView.as_view(), name='create-surat-penelitian-mahasiswa'),
     url(r'^surat-penelitian-mahasiswa/$', TemplateView.as_view(template_name='suratpenelitianmahasiswa-home.html'), name='home-surat-penelitian-mahasiswa'),
+    url(r'^delete-surat-penelitian-mahasiswa/(?P<pk>\d+)/$', SuratIzinPenelitianMahasiswaDeleteView.as_view(), name='delete-surat-penelitian-mahasiswa'),
 
 ]

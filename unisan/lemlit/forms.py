@@ -28,3 +28,8 @@ class SuraIzinPenelitianMahasiswaCreateForm(forms.ModelForm):
             'tujuan_surat',
         )
 
+        widgets = {
+
+            'nomor_surat': forms.TextInput(
+                attrs={'placeholder': 'Tiga digit nomor surat : XXX '}),
+        }

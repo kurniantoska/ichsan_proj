@@ -15,4 +15,44 @@
             </li>
         {% endfor %}
     </ul>
+
+{#    <table class="table">#}
+{#      <thead>#}
+{#        <tr>#}
+{#          <th>#</th>#}
+{#          <th>Nama</th>#}
+{#          <th>Nim</th>#}
+{#          <th>Fakultas</th>#}
+{#        </tr>#}
+{#      </thead>#}
+{#      <tbody>#}
+{#      {% for obj in mhs.object_list %}#}
+{#        <tr>#}
+{#            <th scope="row">{{ forloop.counter0|add:mhs.start_index }} </th>#}
+{#            <td>#}
+{#                <a href ="{{ obj.get_absolute_url  }}">{{ obj.nama }}</a>#}
+{#            </td>#}
+{##}
+{#            <td>{{ obj.nim }}</a></td>#}
+{#            <td>{{ obj.fakultas }}</td>#}
+{#        </tr>#}
+{#      {% endfor %}#}
+{#      </tbody>#}
+{#    </table>#}
+{##}
+{#    <div class="pagination">#}
+{#    <span class="step-links">#}
+{#        {% if mhs.has_previous %}#}
+{#            <a href="?page={{ mhs.previous_page_number }}">previous</a>#}
+{#        {% endif %}#}
+{##}
+{#        <span class="current">#}
+{#            Page {{ mhs.number }} of {{ mhs.paginator.num_pages }}.#}
+{#        </span>#}
+{##}
+{#        {% if mhs.has_next %}#}
+{#            <a href="?page={{ mhs.next_page_number }}">next</a>#}
+{#        {% endif %}#}
+{#    </span>#}
+{#    </div>#}
 {% endblock content %}

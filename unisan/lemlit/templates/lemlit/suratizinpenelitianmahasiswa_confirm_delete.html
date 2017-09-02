@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block head_title %} Delete - {{ object.penelitian.judul }} | {{ block.super }} {% endblock head_title %}
+
+{%  block content %}
+<p></p>
+<h1>Apakah Anda yakin akan menghapus surat izin penelitian --> "{{ object.penelitian.judul }}" ?</h1>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Ya, HAPUS !</button>
+    <a href="{% url 'lemlit:list-surat-penelitian-mahasiswa' %}" class="btn btn-primary">Cancel</a>
+</form>
+{% endblock content %}
+
+

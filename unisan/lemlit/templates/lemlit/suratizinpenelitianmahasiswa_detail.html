@@ -3,7 +3,7 @@
 
 {%  block content %}
     <small>Surat Izin Penelitian Mahasiswa</small>
-    <h1>{{ object.penelitian.judul }} <small> <a class="btn btn-primary" href="{{ object.get_absolute_url_update }}">Edit</a> </small></h1>
+    <h1>{{ object.penelitian.judul }} <small> <a class="btn btn-primary" href="{{ object.get_absolute_url_update }}">Edit</a> <a class="btn btn-primary" href="{{ object.get_absolute_url_delete }}">Delete</a></small></h1>
     <ul>
         <li>Lokasi : {{ object.penelitian.lokasi }}</li>
         <li>Pengirim Surat : {{ object.mahasiswa.nama }}, </li>

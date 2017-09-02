@@ -4,10 +4,11 @@ from reportlab.lib.pagesizes import A4
 
 import json
 from django.http import HttpResponse
+from django.core.urlresolvers import reverse_lazy
 
 from django.views.generic import DetailView
 from django.views.generic.list import ListView
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.base import TemplateView
 
 from base.models import Mahasiswa
@@ -34,6 +35,9 @@ class SuratIzinPenelitianMahasiswaUpdateView(UpdateView):
         context = super(SuratIzinPenelitianMahasiswaUpdateView, self).get_context_data()
         context['status'] = 'Edit'
         return context
+class SuratIzinPenelitianMahasiswaDeleteView(DeleteView):
+    model = SuratIzinPenelitianMahasiswa
+    success_url = reverse_lazy('lemlit:list-surat-penelitian-mahasiswa')
 
 class SuraIzinPenelitianMahasiswaListView(ListView):
     def get_queryset(self):

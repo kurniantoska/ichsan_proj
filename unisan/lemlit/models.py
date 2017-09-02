@@ -30,6 +30,9 @@ class SuratIzinPenelitianMahasiswa(models.Model):
     def get_absolute_url_update(self):
         return reverse('lemlit:edit-surat-penelitian-mahasiswa', kwargs={'pk' : self.id})
 
+    def get_absolute_url_delete(self):
+        return reverse('lemlit:delete-surat-penelitian-mahasiswa', kwargs={'pk' : self.id})
+
     def get_absolute_url_cetak_pdf(self):
         return reverse('lemlit:cetak-surat-penelitian-mahasiswa', kwargs={'pk' : self.id})
 
@@ -42,9 +45,11 @@ class SuratIzinPenelitianMahasiswa(models.Model):
     def get_ketua_lemlit_name(self):
         return StrukturManajemen.objects.get(jabatan='Ketua Lembaga Penelitian')
 
-
     def __str__(self):
         return self.penelitian.judul
+
+    class Meta :
+        ordering = ['created', 'updated']
 
 class StrukturManajemen(models.Model):
     nama_dosen          = models.ForeignKey(Dosen)

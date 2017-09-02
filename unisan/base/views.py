@@ -1,6 +1,8 @@
 from dal import autocomplete
-from urllib import parse
+
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render
+
 
 from django.views.generic import DetailView
 from django.views.generic.list import ListView
@@ -37,6 +39,28 @@ class MahasiswaUpdateView(UpdateView):
 class MahasiswaListView(ListView):
     def get_queryset(self):
         return Mahasiswa.objects.all()
+
+    def get_context_data(self, **kwargs):
+
+        context = super(MahasiswaListView, self).get_context_data(**kwargs)
+        context['temp'] = self.request.GET.get('temp')
+
+        mhs = self.get_queryset()
+        paginator = Paginator(mhs, 2)
+        page = self.request.GET.get('page')
+
+        try:
+            mhs = paginator.page(page)
+        except PageNotAnInteger:
+            # If page is not an integer, deliver first page.
+            mhs = paginator.page(1)
+        except EmptyPage:
+            # If page is out of range (e.g. 9999), deliver last page of results.
+            mhs = paginator.page(paginator.num_pages)
+
+        context['mhs'] = mhs
+
+        return context
 
 class MahasiswaDetailView(DetailView):
     def get_queryset(self):
