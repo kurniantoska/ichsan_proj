@@ -32,4 +32,8 @@ class SuraIzinPenelitianMahasiswaCreateForm(forms.ModelForm):
 
             'nomor_surat': forms.TextInput(
                 attrs={'placeholder': 'Tiga digit nomor surat : XXX '}),
+            'tujuan_surat': forms.TextInput(
+                attrs={'placeholder': 'Gorontalo'}),
+            'nama_instansi': forms.TextInput(
+                attrs={'placeholder': 'Nama Kantor / Lembaga / Perusahaan'}),
         }
