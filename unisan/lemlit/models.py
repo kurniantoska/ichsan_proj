@@ -3,7 +3,8 @@ from django.conf import settings
 from base.models import Penelitian, Mahasiswa, Dosen
 from django.core.urlresolvers import reverse
 from .utils import write_roman
-from base.utils import get_fakultas_full_name, get_program_studi_full_name
+from base.utils import get_program_studi_full_name
+
 
 User = settings.AUTH_USER_MODEL
 
@@ -37,7 +38,7 @@ class SuratIzinPenelitianMahasiswa(models.Model):
         return reverse('lemlit:cetak-surat-penelitian-mahasiswa', kwargs={'pk' : self.id})
 
     def get_fakultas(self):
-        return get_fakultas_full_name(self.mahasiswa.program_studi)
+        return self.mahasiswa.get_fakultas()
 
     def get_program_studi_name(self):
         return get_program_studi_full_name(self.mahasiswa.program_studi)

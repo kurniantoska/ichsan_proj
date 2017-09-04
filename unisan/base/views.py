@@ -111,7 +111,7 @@ class PenelitianBaseFromMahasiswaAutoComplete(autocomplete.Select2QuerySetView):
         # print('nilai mhs_pk -> {} '.format(mhs_pk))
         if mhs_pk :
             mhs_instance = semua_mahasiswa.get(pk=mhs_pk)
-            list_penelitian_mhs_instance = Penelitian.objects.filter(mahasiswa=mhs_instance)
+            list_penelitian_mhs_instance = mhs_instance.penelitian_set.all()
             list_penelitian_mhs_instance_not_exists_in_suratizinpenelitianmahasiswa = list_penelitian_mhs_instance.exclude(suratizinpenelitianmahasiswa__isnull=False)
             qs = list_penelitian_mhs_instance_not_exists_in_suratizinpenelitianmahasiswa
 

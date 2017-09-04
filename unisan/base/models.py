@@ -1,7 +1,8 @@
 
 from django.db import models
 from django.core.urlresolvers import reverse
-from base.utils import get_fakultas_full_name, get_program_studi_full_name
+from base.utils import get_program_studi_full_name
+
 # Create your models here.
 
 class Mahasiswa(models.Model):
@@ -19,6 +20,7 @@ class Mahasiswa(models.Model):
         ('Fakultas Hukum', (
             ('pe', 'Perdata'),
             ('pi', 'Pidana'),
+            ('za', 'TEST hukum')
          )
          ),
         ('Fakultas Teknik', (
@@ -56,10 +58,17 @@ class Mahasiswa(models.Model):
         return reverse('base:update-mahasiswa', kwargs={'pk': self.id})
 
     def get_fakultas(self):
-        return get_fakultas_full_name(self.mahasiswa.program_studi)
+        d = dict(self.FAKULTAS_N_PRODI_CHOICES)
+        for k, v in d.items():
+            v = dict(v)
+            for k1, v1 in v.items():
+                if self.program_studi == k1:
+                    return k
+            if self.program_studi == k:
+                return k
 
-    def get_program_studi(self):
-        return get_program_studi_full_name(self.mahasiswa.program_studi)
+    def get_program_studi_name(self):
+        return get_program_studi_full_name(self.program_studi)
 
     def save(self):
         self.nim = self.nim.upper()

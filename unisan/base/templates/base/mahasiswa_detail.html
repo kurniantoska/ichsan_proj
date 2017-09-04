@@ -18,6 +18,12 @@
 
 </p>
 <p>
+    Fakultas : {{ object.get_fakultas }}
+</p>
+<p>
+    Program Studi : {{ object.get_program_studi_name }}
+</p>
+<p>
     {% if object.penelitian_set.all %}
     <h3>Data Penelitian</h3>
         <ul>

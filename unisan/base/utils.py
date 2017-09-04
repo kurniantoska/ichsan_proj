@@ -1,17 +1,12 @@
-import string
-
-def get_fakultas_full_name(program_studi):
-    if program_studi in ('ak', 'man'):
-        return 'Fakultas Ekonomoi'
-    elif program_studi in ('ar', 'el'):
-        return  'Fakultas Teknik'
-    else:
-        return 'Fakultas tidak terdaftar pada sistem kami!'
-
 def get_program_studi_full_name(program_studi):
-    if program_studi == 'ak':
-        return 'Akuntansi'
-    elif program_studi in ('man'):
-        return  'Manajemen'
-    else:
-        return 'Fakultas tidak terdaftar pada sistem kami!'
+    PROGRAM_STUDI_DICT = {'ak' : 'Akuntansi',
+                          'man' : 'Manajemen',
+                          'si' : 'Sistem Informasi',
+                          'ti' : 'Teknik Informatika',
+                          'ar' : 'Arsitektur',
+                          'el' : 'Teknik Elektro',
+                          'ko' : 'Ilmu Komunikasi',
+                          'ab' : 'Agribisnis',
+                          'thp' : 'Teknologi Hasil Pertanian'
+                          }
+    return PROGRAM_STUDI_DICT[program_studi]
