@@ -88,7 +88,7 @@ class MahasiswaHavePenelitianDetailView(DetailView):
     def get_queryset(self):
         return Mahasiswa.objects.none()
     def get_context_data(self, **kwargs):
-            context = super(MahasiswaUpdateView, self).get_context_data(**kwargs)
+            context = super(MahasiswaHavePenelitianDetailView, self).get_context_data(**kwargs)
             context['title'] = 'Update Data Mahasiswa'
             return context
 

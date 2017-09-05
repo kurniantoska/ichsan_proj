@@ -4,7 +4,6 @@ from django.core.urlresolvers import reverse
 from base.utils import get_program_studi_full_name
 
 # Create your models here.
-
 class Mahasiswa(models.Model):
     FAKULTAS_N_PRODI_CHOICES = (
         ('Fakultas Ekonomi', (
@@ -13,16 +12,15 @@ class Mahasiswa(models.Model):
             )
         ),
         ('Fakultas Ilmu Komputer', (
-            ('si', 'Sistem Informasi'),
             ('ti', 'Teknik Informatika'),
-         )
-         ),
+            ('ti', '-'),
+        )
+        ),
         ('Fakultas Hukum', (
-            ('pe', 'Perdata'),
-            ('pi', 'Pidana'),
-            ('za', 'TEST hukum')
-         )
-         ),
+            ('hu', 'Ilmu Hukum'),
+            ('hu', '-'),
+        )
+        ),
         ('Fakultas Teknik', (
             ('ar', 'Arsitektur'),
             ('el', 'Elektro'),
@@ -30,14 +28,15 @@ class Mahasiswa(models.Model):
         ),
         ('Fakultas Ilmu Sosial, Ilmu Politik', (
             ('ko', 'Komunikasi'),
-            ('ad', 'Administrasi'),
+            ('ip', 'Ilmu Pemerintahan'),
         )
         ),
         ('Fakultas Pertanian', (
-            ('ab', 'Agribisnis'),
+            ('agb', 'Agribisnis'),
+            ('agr', 'Agroteknologi',),
             ('thp', 'Teknologi Hasil Pertanian'),
-        )
         ),
+        )
     )
 
     nama                            = models.CharField(max_length=120)
