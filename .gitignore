@@ -103,3 +103,4 @@ unisan/.idea/
 
 # my apps settings
 unisan/unisan/settings.py
+unisan/db.sqlite3
