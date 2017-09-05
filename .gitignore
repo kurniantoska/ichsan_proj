@@ -100,3 +100,6 @@ unisan/.idea/
 
 # mypy
 .mypy_cache/
+
+# my apps settings
+unisan/unisan/settings.py

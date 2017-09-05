@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="504b42bb-fb1e-4754-a7fe-bdf2b37c1cb5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/snippets/css-big-city.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/snippets/js-big-city.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lemlit/templates/form-surat-izin-penelitian-mhs.html" afterPath="$PROJECT_DIR$/lemlit/templates/form-surat-izin-penelitian-mhs.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base-bigcity.html" afterPath="$PROJECT_DIR$/templates/base-bigcity.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/components/page2.html" afterPath="$PROJECT_DIR$/templates/components/page2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/snippets/css.html" afterPath="$PROJECT_DIR$/templates/snippets/css.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/snippets/js.html" afterPath="$PROJECT_DIR$/templates/snippets/js.html" />
-    </list>
+    <list default="true" id="504b42bb-fb1e-4754-a7fe-bdf2b37c1cb5" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
