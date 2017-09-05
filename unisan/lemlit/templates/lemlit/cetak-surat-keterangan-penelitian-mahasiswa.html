@@ -1,0 +1,183 @@
+<html>
+<head>
+<style>
+    .headerkop p{
+        margin:0;
+    }
+
+    .alamatheader p{
+        font-size: small;
+    }
+
+    .garis_header hr{
+        display: block;
+        height: 1px;
+        background: transparent;
+        width: 100%;
+        border: none;
+        border-top: solid 5px #aaa;
+    }
+
+    .isianmahasiswa tr{
+        vertical-align: text-top;
+    }
+
+    .tandatanganketua p{
+        margin:0;
+    }
+
+    .footer-petugas p{
+        font-size: x-small;
+    }
+
+    body {
+        margin-left: .5in;
+    }
+
+
+</style>
+</head>
+{% load static %}
+<body>
+
+<div>
+<div class="headerkop">
+<table>
+<tbody>
+<tr>
+<td><img src="{% static 'lemlit.png' %}" height="91" /></td>
+<td>
+<p lang="id-ID" style="text-align: center;"><span style="color: #ff0000;"><strong>KEMENTERIAN RISET, TEKNOLOGI DAN PENDIDIKAN TINGGI</strong></span></p>
+<p lang="id-ID" style="text-align: center;"><span style="color: #ff0000;"><strong>LEMBAGA PENELITIAN (LEMLIT)</strong></span></p>
+<p lang="id-ID" style="text-align: center;"><span style="color: #ff0000;"><strong>UNIVERSITAS ICHSAN GORONTAL</strong><strong>O</strong></span></p>
+<div class="alamatheader">
+<p lang="id-ID" style="text-align: center;"><span style="color: #0000ff;">Jl. Raden Saleh No. 17 Kota Gorontalo</span></p>
+<p lang="id-ID" style="text-align: center;"><span style="color: #0000ff;">Telp: (0435) 8724466, 829975; Fax: (0435) 82997;</span></p>
+<p lang="id-ID" style="text-align: center;"><span style="color: #0000ff;">E-mail: <a style="color: #0000ff;" href="mailto:lembagapenelitian@unisan.ac.id">lembagapenelitian@unisan.ac.id</a></span></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div>
+<div class="garis_header"><hr /></div>
+</div>
+<h3 style="text-align: center;"><span style="text-decoration: underline;">SURAT KETERANGAN</span></h3>
+<p style="text-align: center;">Nomor : {{ object.nomor_surat }}/SK/LEMLIT-UNISAN/GTO/{{ object.get_created_month_roman }}/{{ object.created.year }}</p>
+<div>&nbsp;</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td>Yang bertanda tangan di bawah ini :</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table style="width: 588px;">
+<tbody>
+<tr style="height: 22.75px;">
+<td style="width: 210px; height: 22.75px;">Nama</td>
+<td style="width: 5px; height: 22.75px;">:</td>
+<td style="width: 499px; height: 22.75px;">{{ object.get_ketua_lemlit_name.nama_dosen.nama }}</td>
+</tr>
+<tr style="height: 22.75px;">
+<td style="width: 210px; height: 22.75px;">NIDN</td>
+<td style="width: 5px; height: 22.75px;">:</td>
+<td style="width: 499px; height: 22.75px;">{{ object.get_ketua_lemlit_name.nama_dosen.nidn }}</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 210px; height: 18px;">Jabatan</td>
+<td style="width: 5px; height: 18px;">:</td>
+<td style="width: 499px; height: 18px;">Ketua Lembaga Penelitian</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>&nbsp;</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td>Menerangkan bahwa :</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<div class="isianmahasiswa">
+<table style="width: 581px;">
+<tbody>
+<tr>
+<td style="width: 210px;">Nama Mahasiswa</td>
+<td style="width: 5px;">:</td>
+<td style="width: 486px;">{{ object.mahasiswa.nama }}</td>
+</tr>
+<tr>
+<td style="width: 210px;">NIM</td>
+<td style="width: 5px;">:</td>
+<td style="width: 486px;">{{ object.mahasiswa.nim|upper }}</td>
+</tr>
+<tr>
+<td style="width: 210px;">Fakultas</td>
+<td style="width: 5px;">:</td>
+<td style="width: 486px;">{{ object.get_fakultas }}</td>
+</tr>
+<tr>
+<td style="width: 210px;">Program Studi</td>
+<td style="width: 5px;">:</td>
+<td style="width: 486px;">{{ object.get_program_studi_name }}</td>
+</tr>
+<tr>
+<td style="width: 210px;">Judul Penelitian</td>
+<td style="width: 5px;">:</td>
+<td style="width: 486px;">{{ object.penelitian.judul|upper }}</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div>&nbsp;</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td>Adalah benar telah melakukan pengambilan data penelitian dalam rangka Penyusunan Proposal/Skripsi pada {{ object.nama_instansi|upper }}.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>&nbsp;</div>
+<div>
+<table style="width: 600px;">
+<tbody>
+<tr>
+<td style="width: 1088px;">&nbsp;</td>
+<td style="width: 500px;">
+<div class="tandatanganketua">
+<p>Gorontalo, {{ object.created.date|date:'d F Y' }}</p>
+<p>Ketua,</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="text-decoration: underline;"><strong>{{ object.get_ketua_lemlit_name.nama_dosen.nama }}</strong></span></p>
+<p><strong>NIDN {{ object.get_ketua_lemlit_name.nama_dosen.nidn }}</strong></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
++
+
+
+<div class="footer-petugas">
+{#admin : ..#}
+</div>
+
+</body>
+</html>

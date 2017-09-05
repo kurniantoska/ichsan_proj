@@ -12,10 +12,12 @@
         <li>
             <strong>Diinput</strong> sejak : {{ object.created|timesince }} yang lalu || <strong>Diupdate</strong> pada : {{ object.updated }}
         </li>
+        <li>Nama Instansi Lokasi Penelitian : {{ object.nama_instansi }}</li>
 
     </ul>
 
-    <a class="btn btn-primary" href="{{ object.get_absolute_url_cetak_pdf }}" onclick="window.open(this.href, '_blank', 'width=750,height=600').print(); return false">Cetak Surat</a>
+    <a class="btn btn-primary" href="{{ object.get_absolute_url_cetak_surat_izin }}" onclick="window.open(this.href, '_blank', 'width=750,height=600').print(); return false">Surat Izin</a>
+    <a class="btn btn-primary" href="{{ object.get_absolute_url_cetak_surat_keterangan }}" onclick="window.open(this.href, '_blank', 'width=750,height=600').print(); return false">Surat Keterangan</a>
 
 {#    <p>bulan ditambahkan database : {{ object.get_created_month_roman }}</p>#}
 

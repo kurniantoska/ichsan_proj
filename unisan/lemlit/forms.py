@@ -5,7 +5,10 @@ from dal import forward
 
 from django import forms
 from base.models import Mahasiswa, Penelitian
-from .models import SuratIzinPenelitianMahasiswa
+from .models import (
+SuratIzinPenelitianMahasiswa,
+SuratKeteranganPenelitianMahasiswa
+)
 
 class SuraIzinPenelitianMahasiswaCreateForm(forms.ModelForm):
     mahasiswa = forms.ModelChoiceField(
@@ -37,3 +40,15 @@ class SuraIzinPenelitianMahasiswaCreateForm(forms.ModelForm):
             'nama_instansi': forms.TextInput(
                 attrs={'placeholder': 'Nama Kantor / Lembaga / Perusahaan'}),
         }
+
+
+class SuraKeteranganPenelitianMahasiswaCreateForm(SuraIzinPenelitianMahasiswaCreateForm):
+    class Meta:
+        model = SuratKeteranganPenelitianMahasiswa
+        fields = (
+            'mahasiswa',
+            'penelitian',
+            'nomor_surat',
+            'nama_instansi',
+            'tujuan_surat',
+        )

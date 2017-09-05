@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% block head_title %}Lemlit{% endblock head_title %}</title>
+
+     <!-- load CSS files -->
+    {% include 'snippets/css.html' %}
+</head>
+
+    <body>
+        {% block video %}{% endblock video %}
+        <!-- Content -->
+        <div class="cd-hero">
+
+            <!-- Navigation -->
+            {% include 'components/navigation.html' %}
+
+
+            <ul class="cd-hero-slider">  <!-- autoplay -->
+
+                <!-- Page 1 Home -->
+                <li class="selected">
+                    <div class="cd-full-width">
+                        <div class="container js-tm-page-content tm-page-1 tm-section-margin-t-small" data-page-no="1">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="tm-home-container-outer">
+                                        <div class="tm-home-container">
+                                            <div class="tm-home-title-container">
+                                                <h2 class="tm-text-title text-xs-center tm-home-title">Welcome to Lemlit APP</h2>
+                                            </div>
+                                            <div class="tm-home-description-container tm-bg-dark-blue">
+                                                <div class="text-xs-left tm-textbox">
+                                                    {% block homecontent %}
+                                                    {% endblock homecontent %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tm-home-container-bg"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- .cd-full-width -->
+                </li>
+
+                <!-- Page 2 About -->
+                {% include 'components/page2.html' %}
+
+            </ul> <!-- .cd-hero-slider -->
+
+            <footer class="tm-footer">
+                <p class="tm-copyright-text pull-xs-right">Copyright &copy; <span class="tm-current-year">2017</span> Lemlit UNIVERSITAS ICHSAN GORONTALO
+                | Design: <a rel="nofollow" href="#" class="tm-footer-link" target="_parent">FT - UNISAN</a></p>
+            </footer>
+        </div> <!-- .cd-hero -->
+
+        <!-- Preloader, https://ihatetomatoes.net/create-custom-preloading-screen/ -->
+        <div id="loader-wrapper">            
+            <div id="loader"></div>
+            <div class="loader-section section-left"></div>
+            <div class="loader-section section-right"></div>
+        </div>
+        
+        <!-- load JS files -->
+        {% include 'snippets/js.html' %}
+
+</body>
+</html>

@@ -5,3 +5,7 @@
     vertical-align: top;
     border-top: 1px solid #e9ecef;
 }
+
+.body p {
+    margin-bottom: 2rem;
+}

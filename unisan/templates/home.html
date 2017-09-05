@@ -1,11 +1,17 @@
-{% extends "base.html" %}
+{% extends "base-bigcity.html" %}
 
 {% block head_title %} Home || {{ block.super }} {% endblock head_title %}
 
-{%  block content %}
-<p>
-    <h1>Home </h1>
-</p>
-Hello Welcome to Lemlit Home Page!!
+{% block video %}
+<div class="cd-bg-video-wrapper" data-video="static/video/bangkok-city" type="video/mp4">
+    <!-- video element will be loaded using jQuery -->
+</div> <!-- .cd-bg-video-wrapper -->
+{% endblock video %}
 
-{% endblock content %}
+
+{%  block homecontent %}
+<p class="tm-text tm-home-description">Situs ini adalah Sistem aplikasi Web Lembaga Penelitian (LEMLIT) Universitas Ichsan Gorontalo.
+</p>
+<p class="tm-text tm-home-description">Sistem ini membantu operator lemlit dalam pembuatan berkas - berkas yang biasanya disediakan oleh Lemlit UNISAN. Selain itu pada sistem ini terdapat data penelitian, data mahasiswa dan data dosen.
+</p>
+{% endblock homecontent %}
