@@ -102,5 +102,5 @@ unisan/.idea/
 .mypy_cache/
 
 # my apps settings
-unisan/unisan/settings.py
-unisan/db.sqlite3
+settings.py
+db.sqlite3
