@@ -10,7 +10,13 @@ User = settings.AUTH_USER_MODEL
 
 # Create your models here.
 class SuratIzinPenelitianMahasiswa(models.Model):
-    nomor_surat         = models.CharField(unique=True, max_length=50)
+
+    KWITANSI_OPTION =(
+        ('Surat Keterangan', 'Surat Keterangan'),
+        ('Surat Izin Penelitian', 'Surat Izin Penelitian')
+    )
+
+    nomor_surat         = models.CharField(max_length=50)
     mahasiswa           = models.ForeignKey(Mahasiswa, null=True, blank=True)
     penelitian          = models.ForeignKey(Penelitian)
     nama_instansi       = models.CharField(max_length=80)
@@ -19,6 +25,8 @@ class SuratIzinPenelitianMahasiswa(models.Model):
     updated             = models.DateTimeField(auto_now=True, null=True, blank=True)
     disetujui           = models.BooleanField(default=False)
     distempel           = models.BooleanField(default=False)
+    petugas             = models.CharField(max_length=50, null=True, blank=True)
+    untuk_pembayaran    = models.CharField(max_length=25, choices=KWITANSI_OPTION, default='Surat Izin Penelitian')
 
 
     def get_created_month_roman(self):
@@ -36,6 +44,9 @@ class SuratIzinPenelitianMahasiswa(models.Model):
 
     def get_absolute_url_cetak_surat_izin(self):
         return reverse('lemlit:cetak-surat-izin-penelitian-mahasiswa', kwargs={'pk' : self.id})
+
+    def get_absolute_url_cetak_kwitansi_izin(self):
+        return reverse('lemlit:cetak-kwitansi-surat-izin-penelitian-mahasiswa', kwargs={'pk' : self.id})
 
     def get_absolute_url_cetak_surat_keterangan(self):
         return reverse('lemlit:cetak-surat-keterangan-penelitian-mahasiswa', kwargs={'pk' : self.id})
@@ -70,7 +81,3 @@ class PetugasAdmininistrasi(models.Model):
     user                = models.ForeignKey(User)
     def __str__(self):
         return self.user.first_name
-
-
-
-

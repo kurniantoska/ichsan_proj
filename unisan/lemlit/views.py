@@ -72,7 +72,12 @@ class CetakSuratIzinPenelitianMahasiswa(DetailView):
     model = SuratIzinPenelitianMahasiswa
     template_name = "lemlit/cetak-surat-izin-penelitian-mahasiswa.html"
 
+class CetakKuitansiSuratPenelitian(DetailView) :
+    model = SuratIzinPenelitianMahasiswa
+    template_name = "lemlit/cetak-kuitansi-penelitian-mahasiswa.html"
+
 
 class CetakSuratKeteranganPenelitianMahasiswa(DetailView):
     model = SuratIzinPenelitianMahasiswa
     template_name = "lemlit/cetak-surat-keterangan-penelitian-mahasiswa.html"
+

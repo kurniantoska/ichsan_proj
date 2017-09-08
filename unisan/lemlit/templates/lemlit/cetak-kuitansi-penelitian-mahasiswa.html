@@ -1,0 +1,126 @@
+<html>
+<head>
+    <title> Lemlit Kwitansi || {{ object.mahasiswa.nim }}-{% now "U" %}</title>
+    <style>
+    .headerkop p{
+        margin:0;
+    }
+
+    .alamatheader p{
+        font-size: small;
+    }
+
+    .garis_header hr{
+        display: block;
+        height: 1px;
+        background: transparent;
+        width: 100%;
+        border: none;
+        border-top: solid 5px #aaa;
+    }
+
+    .isianmahasiswa tr{
+        vertical-align: text-top;
+    }
+
+    .signature p{
+        margin:0;
+    }
+
+    .footer-petugas p{
+        font-size: x-small;
+    }
+
+    body {
+        margin-left: .5in;
+    }
+
+    .notes p{
+        font-size: 80%;
+    }
+</style>
+
+
+</head>
+<body>
+
+    <table style="width: 700px;" border="2">
+    <tbody>
+    <tr>
+    <td style="width: 594px; text-align: left;">
+
+    <h2 style="text-align: center;"><strong>KWITANSI</strong></h2>
+    <table>
+    <tbody>
+    <tr>
+    <td> Nomor</td>
+    <td>:</td>
+    <td>{{ object.nomor_surat }}/LEMLIT-UNISAN/GTO/{{ object.get_created_month_roman }}/{{ object.created.year }}</td>
+    </tr>
+    <tr>
+    <td> Nama</td>
+    <td>:</td>
+    <td>{{ object.mahasiswa.nama }}</td>
+    </tr>
+    <tr>
+    <td> NIM</td>
+    <td>:</td>
+    <td>{{ object.mahasiswa.nim }}</td>
+    </tr>
+    <tr>
+    <td> Sudah diterima dari&nbsp;</td>
+    <td>:</td>
+    <td> Lemaga Penelitian Universitas Ichsan Gorontalo</td>
+    </tr>
+    <tr>
+    <td> Uang Sejumlah</td>
+    <td>:</td>
+    <td>Rp. 150.000, -</td>
+    </tr>
+    <tr>
+    <td> Untuk Pembayaran</td>
+    <td>:</td>
+    <td>Surat Izin Penelitian</td>
+    </tr>
+    <tr>
+    <td> Terbilang</td>
+    <td>:</td>
+    <td>Seratus lima puluh ribu Rupiah</td>
+    </tr>
+    </tbody>
+    </table>
+    <p>&nbsp;</p>
+        <div class="signature">
+
+            <table style="width: 650px;">
+            <tbody>
+            <tr>
+            <td style="width: 298px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
+            <td style="width: 203px;">
+            <p>Gorontalo, {% now "d F Y" %}</p>
+                <p>Penerima</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+            <p><span style="text-decoration: underline;">{{ object.petugas }}</span></p>
+            </td>
+            </tr>
+            </tbody>
+            </table>
+            <br/>
+            <p style="text-align: center;">Terima Kasih&nbsp;</p>
+            <br/>
+            <div class = notes>
+                <p style="text-align: left;">* Harap dibawa pada saat mengurus berkas ke Lembaga Penelitian</p>
+            <p>&nbsp;</p>
+            </div>
+            </td>
+            </tr>
+            </tbody>
+            </table>
+
+
+
+        </div>
+</body>
+</html>

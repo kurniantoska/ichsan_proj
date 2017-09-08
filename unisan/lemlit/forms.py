@@ -29,6 +29,7 @@ class SuraIzinPenelitianMahasiswaCreateForm(forms.ModelForm):
             'nomor_surat',
             'nama_instansi',
             'tujuan_surat',
+            'petugas'
         )
 
         widgets = {
@@ -39,6 +40,8 @@ class SuraIzinPenelitianMahasiswaCreateForm(forms.ModelForm):
                 attrs={'placeholder': 'Gorontalo'}),
             'nama_instansi': forms.TextInput(
                 attrs={'placeholder': 'Nama Kantor / Lembaga / Perusahaan'}),
+            'petugas': forms.TextInput(
+                attrs={'placeholder': 'Nama Petugas Lemlit'}),
         }
 
 
