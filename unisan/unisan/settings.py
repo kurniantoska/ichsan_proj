@@ -25,7 +25,7 @@ SECRET_KEY = 'u=%a%w9q-m0+m9@86uc(7xip1w(x$4*514q5wkn0-!w5@b^%0d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['skaterska.pythonanywhere.com', 'lemlit.ichsan']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'skaterska.pythonanywhere.com', 'lemlit.ichsan']
 
 
 # Application definition
