@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+	{% load static %}
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" href="{% static 'lemlitico3_7.png' %}" type="image/png">
     <title>{% block head_title %}Lemlit{% endblock head_title %}</title>
     {% include 'snippets/css.html' %}
 </head>

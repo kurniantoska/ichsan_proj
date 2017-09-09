@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="504b42bb-fb1e-4754-a7fe-bdf2b37c1cb5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lemlit/templates/lemlit/cetak-kuitansi-penelitian-mahasiswa.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/snippets/lemlit_unisancom.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lemlit/forms.py" afterPath="$PROJECT_DIR$/lemlit/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lemlit/models.py" afterPath="$PROJECT_DIR$/lemlit/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lemlit/templates/lemlit/suratizinpenelitianmahasiswa_detail.html" afterPath="$PROJECT_DIR$/lemlit/templates/lemlit/suratizinpenelitianmahasiswa_detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lemlit/urls.py" afterPath="$PROJECT_DIR$/lemlit/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lemlit/views.py" afterPath="$PROJECT_DIR$/lemlit/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/components/navigation.html" afterPath="$PROJECT_DIR$/templates/components/navigation.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,41 +26,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/base/utils.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="14" lean-forward="false" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/base/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
+            <state relative-caret-position="18">
               <caret line="12" column="10" lean-forward="false" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lemlit/models.py">
+      <file leaf-file-name="base-bigcity.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/base-bigcity.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="543">
-              <caret line="65" column="8" lean-forward="false" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="8" />
+            <state relative-caret-position="126">
+              <caret line="7" column="65" lean-forward="true" selection-start-line="7" selection-start-column="65" selection-end-line="7" selection-end-column="65" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lemlit/forms.py">
+      <file leaf-file-name="navigation.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/components/navigation.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="43" column="45" lean-forward="false" selection-start-line="43" selection-start-column="45" selection-end-line="43" selection-end-column="45" />
+            <state relative-caret-position="108">
+              <caret line="5" column="117" lean-forward="false" selection-start-line="5" selection-start-column="117" selection-end-line="5" selection-end-column="117" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="css-big-city.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/snippets/css-big-city.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -73,65 +79,19 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lemlit/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
+            <state relative-caret-position="954">
               <caret line="74" column="34" lean-forward="false" selection-start-line="74" selection-start-column="6" selection-end-line="74" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cetak-kuitansi-penelitian-mahasiswa.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="cetak-kuitansi-penelitian-mahasiswa.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lemlit/templates/lemlit/cetak-kuitansi-penelitian-mahasiswa.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-100">
+            <state relative-caret-position="18">
               <caret line="38" column="20" lean-forward="false" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
-              <folding>
-                <element signature="n#style#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h2#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#1274#1280#0#HTML" expanded="true" />
-                <element signature="e#1697#1703#1#HTML" expanded="true" />
-                <element signature="n#style#0;n#table#0;n#div#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#1858#1864#0#HTML" expanded="true" />
-                <element signature="e#1865#1871#0#HTML" expanded="true" />
-                <element signature="e#1872#1878#0#HTML" expanded="true" />
-                <element signature="e#1879#1885#0#HTML" expanded="true" />
-                <element signature="e#1886#1892#0#HTML" expanded="true" />
-                <element signature="e#1893#1899#0#HTML" expanded="true" />
-                <element signature="e#1900#1906#0#HTML" expanded="true" />
-                <element signature="e#1907#1913#0#HTML" expanded="true" />
-                <element signature="e#1914#1920#0#HTML" expanded="true" />
-                <element signature="e#1921#1927#0#HTML" expanded="true" />
-                <element signature="e#1928#1934#0#HTML" expanded="true" />
-                <element signature="e#1935#1941#0#HTML" expanded="true" />
-                <element signature="e#1942#1948#0#HTML" expanded="true" />
-                <element signature="e#1949#1955#0#HTML" expanded="true" />
-                <element signature="e#1956#1962#0#HTML" expanded="true" />
-                <element signature="e#1963#1969#0#HTML" expanded="true" />
-                <element signature="e#1970#1976#0#HTML" expanded="true" />
-                <element signature="e#1977#1983#0#HTML" expanded="true" />
-                <element signature="e#1984#1990#0#HTML" expanded="true" />
-                <element signature="e#1991#1997#0#HTML" expanded="true" />
-                <element signature="e#1998#2004#0#HTML" expanded="true" />
-                <element signature="e#2005#2011#0#HTML" expanded="true" />
-                <element signature="e#2012#2018#0#HTML" expanded="true" />
-                <element signature="e#2019#2025#0#HTML" expanded="true" />
-                <element signature="e#2026#2032#0#HTML" expanded="true" />
-                <element signature="e#2033#2039#0#HTML" expanded="true" />
-                <element signature="e#2040#2046#0#HTML" expanded="true" />
-                <element signature="e#2047#2053#0#HTML" expanded="true" />
-                <element signature="e#2054#2060#0#HTML" expanded="true" />
-                <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#2204#2210#1#HTML" expanded="true" />
-                <element signature="e#2234#2240#1#HTML" expanded="true" />
-                <element signature="e#2264#2270#1#HTML" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#p#5;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#2515#2521#0#HTML" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#2703#2709#1#HTML" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -149,8 +109,8 @@
       <file leaf-file-name="suratizinpenelitianmahasiswa_detail.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lemlit/templates/lemlit/suratizinpenelitianmahasiswa_detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="21" column="195" lean-forward="true" selection-start-line="21" selection-start-column="195" selection-end-line="21" selection-end-column="195" />
+            <state relative-caret-position="378">
+              <caret line="21" column="195" lean-forward="false" selection-start-line="21" selection-start-column="195" selection-end-line="21" selection-end-column="195" />
               <folding />
             </state>
           </provider>
@@ -159,21 +119,9 @@
       <file leaf-file-name="cetak-surat-izin-penelitian-mahasiswa.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lemlit/templates/lemlit/cetak-surat-izin-penelitian-mahasiswa.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="186" column="46" lean-forward="true" selection-start-line="186" selection-start-column="46" selection-end-line="186" selection-end-column="53" />
+            <state relative-caret-position="3348">
+              <caret line="186" column="46" lean-forward="false" selection-start-line="186" selection-start-column="46" selection-end-line="186" selection-end-column="53" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/base/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="35" column="22" lean-forward="false" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
-              <folding>
-                <marker date="1504598620685" expanded="true" signature="2300:2381" ph="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -211,6 +159,7 @@
       <find>di cetak</find>
       <find>MahasiswaUpdateView</find>
       <find>load</find>
+      <find>lemlit</find>
     </findStrings>
     <replaceStrings>
       <replace>css</replace>
@@ -256,7 +205,6 @@
         <option value="$PROJECT_DIR$/templates/snippets/js/custom-big-city.js" />
         <option value="$PROJECT_DIR$/templates/home.html" />
         <option value="$PROJECT_DIR$/templates/snippets/nav.html" />
-        <option value="$PROJECT_DIR$/templates/components/navigation.html" />
         <option value="$PROJECT_DIR$/templates/snippets/css.html" />
         <option value="$PROJECT_DIR$/templates/snippets/js.html" />
         <option value="$PROJECT_DIR$/templates/snippets/js-big-city.html" />
@@ -275,6 +223,7 @@
         <option value="$PROJECT_DIR$/lemlit/urls.py" />
         <option value="$PROJECT_DIR$/lemlit/models.py" />
         <option value="$PROJECT_DIR$/lemlit/templates/lemlit/cetak-kuitansi-penelitian-mahasiswa.html" />
+        <option value="$PROJECT_DIR$/templates/components/navigation.html" />
       </list>
     </option>
   </component>
@@ -311,6 +260,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -320,6 +270,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="unisan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="unisan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="unisan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="unisan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="unisan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="snippets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -380,7 +362,6 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -393,18 +374,18 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/templates/snippets/js/bigcity" />
-      <recent name="$PROJECT_DIR$/templates/snippets/css/bigcity" />
-      <recent name="$PROJECT_DIR$/templates/snippets/js" />
-      <recent name="$PROJECT_DIR$/templates/snippets/css" />
-      <recent name="$PROJECT_DIR$/templates" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/templates/snippets/js/umd" />
       <recent name="$PROJECT_DIR$/lemlit/templates" />
       <recent name="$PROJECT_DIR$/base/templates/base" />
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/snippets" />
+      <recent name="$PROJECT_DIR$/templates/snippets/js/bigcity" />
+      <recent name="$PROJECT_DIR$/templates/snippets/css/bigcity" />
+      <recent name="$PROJECT_DIR$/templates/snippets/js" />
+      <recent name="$PROJECT_DIR$/templates/snippets/css" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -705,9 +686,8 @@
     <frame x="41" y="21" width="1325" height="747" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23878327" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23849057" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="manage.py@unisan" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3259587" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22418879" sideWeight="0.5026415" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -722,6 +702,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="manage.py@unisan" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3259587" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -878,13 +859,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="64" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -896,13 +870,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="25" column="33" lean-forward="false" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/components/navigation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="55" lean-forward="false" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="58" />
         </state>
       </provider>
     </entry>
@@ -948,13 +915,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/snippets/css-big-city.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/snippets/css/bootstrap.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -980,13 +940,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="2" selection-end-line="19" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base-bigcity.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="61" column="71" lean-forward="false" selection-start-line="61" selection-start-column="71" selection-end-line="61" selection-end-column="71" />
         </state>
       </provider>
     </entry>
@@ -1052,14 +1005,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/base/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="10" lean-forward="false" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/pycharm.jar!/resources/html5-schema/html5/legacy.rnc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
@@ -1070,16 +1015,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lemlit/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
+        <state relative-caret-position="630">
           <caret line="43" column="45" lean-forward="false" selection-start-line="43" selection-start-column="45" selection-end-line="43" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lemlit/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="65" column="8" lean-forward="false" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lemlit/templates/lemlit/cetak-surat-izin-penelitian-mahasiswa.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3348">
+          <caret line="186" column="46" lean-forward="false" selection-start-line="186" selection-start-column="46" selection-end-line="186" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lemlit/templates/lemlit/suratizinpenelitianmahasiswa_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" column="195" lean-forward="false" selection-start-line="21" selection-start-column="195" selection-end-line="21" selection-end-column="195" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lemlit/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
+        <state relative-caret-position="954">
           <caret line="74" column="34" lean-forward="false" selection-start-line="74" selection-start-column="6" selection-end-line="74" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lemlit/templates/lemlit/cetak-kuitansi-penelitian-mahasiswa.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="38" column="20" lean-forward="false" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
           <folding />
         </state>
       </provider>
@@ -1092,81 +1069,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lemlit/models.py">
+    <entry file="file://$PROJECT_DIR$/base/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="543">
-          <caret line="65" column="8" lean-forward="false" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="8" />
+        <state relative-caret-position="18">
+          <caret line="12" column="10" lean-forward="false" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lemlit/templates/lemlit/cetak-surat-izin-penelitian-mahasiswa.html">
+    <entry file="file://$PROJECT_DIR$/templates/snippets/css-big-city.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="186" column="46" lean-forward="true" selection-start-line="186" selection-start-column="46" selection-end-line="186" selection-end-column="53" />
+        <state relative-caret-position="0">
+          <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lemlit/templates/lemlit/suratizinpenelitianmahasiswa_detail.html">
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="21" column="195" lean-forward="true" selection-start-line="21" selection-start-column="195" selection-end-line="21" selection-end-column="195" />
+        <state relative-caret-position="198">
+          <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lemlit/templates/lemlit/cetak-kuitansi-penelitian-mahasiswa.html">
+    <entry file="file://$PROJECT_DIR$/templates/base-bigcity.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-100">
-          <caret line="38" column="20" lean-forward="false" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
-          <folding>
-            <element signature="n#style#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h2#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#1274#1280#0#HTML" expanded="true" />
-            <element signature="e#1697#1703#1#HTML" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#div#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#1858#1864#0#HTML" expanded="true" />
-            <element signature="e#1865#1871#0#HTML" expanded="true" />
-            <element signature="e#1872#1878#0#HTML" expanded="true" />
-            <element signature="e#1879#1885#0#HTML" expanded="true" />
-            <element signature="e#1886#1892#0#HTML" expanded="true" />
-            <element signature="e#1893#1899#0#HTML" expanded="true" />
-            <element signature="e#1900#1906#0#HTML" expanded="true" />
-            <element signature="e#1907#1913#0#HTML" expanded="true" />
-            <element signature="e#1914#1920#0#HTML" expanded="true" />
-            <element signature="e#1921#1927#0#HTML" expanded="true" />
-            <element signature="e#1928#1934#0#HTML" expanded="true" />
-            <element signature="e#1935#1941#0#HTML" expanded="true" />
-            <element signature="e#1942#1948#0#HTML" expanded="true" />
-            <element signature="e#1949#1955#0#HTML" expanded="true" />
-            <element signature="e#1956#1962#0#HTML" expanded="true" />
-            <element signature="e#1963#1969#0#HTML" expanded="true" />
-            <element signature="e#1970#1976#0#HTML" expanded="true" />
-            <element signature="e#1977#1983#0#HTML" expanded="true" />
-            <element signature="e#1984#1990#0#HTML" expanded="true" />
-            <element signature="e#1991#1997#0#HTML" expanded="true" />
-            <element signature="e#1998#2004#0#HTML" expanded="true" />
-            <element signature="e#2005#2011#0#HTML" expanded="true" />
-            <element signature="e#2012#2018#0#HTML" expanded="true" />
-            <element signature="e#2019#2025#0#HTML" expanded="true" />
-            <element signature="e#2026#2032#0#HTML" expanded="true" />
-            <element signature="e#2033#2039#0#HTML" expanded="true" />
-            <element signature="e#2040#2046#0#HTML" expanded="true" />
-            <element signature="e#2047#2053#0#HTML" expanded="true" />
-            <element signature="e#2054#2060#0#HTML" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#2204#2210#1#HTML" expanded="true" />
-            <element signature="e#2234#2240#1#HTML" expanded="true" />
-            <element signature="e#2264#2270#1#HTML" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#5;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#2515#2521#0#HTML" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#2703#2709#1#HTML" expanded="true" />
-          </folding>
+        <state relative-caret-position="126">
+          <caret line="7" column="65" lean-forward="true" selection-start-line="7" selection-start-column="65" selection-end-line="7" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/components/navigation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="5" column="117" lean-forward="false" selection-start-line="5" selection-start-column="117" selection-end-line="5" selection-end-column="117" />
+          <folding />
         </state>
       </provider>
     </entry>
