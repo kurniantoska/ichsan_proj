@@ -91,6 +91,7 @@ ENV/
 .spyderproject
 .spyproject
 unisan/.idea/
+unisan/.idea
 
 # Rope project settings
 .ropeproject
