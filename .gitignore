@@ -90,8 +90,10 @@ ENV/
 # Spyder project settings
 .spyderproject
 .spyproject
-unisan/.idea/
 unisan/.idea
+unisan/.idea/
+.idea
+.idea/
 
 # Rope project settings
 .ropeproject
