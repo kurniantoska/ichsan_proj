@@ -1,8 +1,7 @@
-Django==1.11.4
-django-autocomplete-light==3.2.9
-django-crispy-forms==1.6.1
-olefile==0.44
-Pillow==4.2.1
-pytz==2017.2
-reportlab==3.4.0
-six==1.10.0
+Django
+django-autocomplete-light
+django-crispy-forms
+olefile
+Pillow
+pytz
+six
