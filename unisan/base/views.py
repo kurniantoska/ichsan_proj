@@ -12,7 +12,7 @@ from .forms import MahasiswaCreateForm, PenelitianCreateForm
 
 from .models import Mahasiswa, Penelitian
 from lemlit.models import SuratIzinPenelitianMahasiswa
-# Create your views here.
+
 
 class MahasiswaCreateView(CreateView):
     form_class = MahasiswaCreateForm
@@ -22,6 +22,7 @@ class MahasiswaCreateView(CreateView):
         context = super(MahasiswaCreateView, self).get_context_data( **kwargs)
         context['title'] = 'Tambah Data Mahasiswa'
         return context
+
 
 class MahasiswaUpdateView(UpdateView):
     form_class = MahasiswaCreateForm
@@ -62,6 +63,7 @@ class MahasiswaListView(ListView):
 
         return context
 
+
 class MahasiswaDetailView(DetailView):
     def get_queryset(self):
         return Mahasiswa.objects.all()
@@ -71,22 +73,27 @@ class PenelitianCreateView(CreateView):
     form_class = PenelitianCreateForm
     template_name = 'penelitian-form.html'
 
+
 class PenelitianUpdateView(UpdateView):
     model = Penelitian
     form_class = PenelitianCreateForm
     template_name = 'penelitian-form.html'
 
+
 class PenelitianListView(ListView):
     def get_queryset(self):
         return Penelitian.objects.all()
+
 
 class PenelitianDetailView(DetailView):
     def get_queryset(self):
         return Penelitian.objects.all()
 
+
 class MahasiswaHavePenelitianDetailView(DetailView):
     def get_queryset(self):
         return Mahasiswa.objects.none()
+
     def get_context_data(self, **kwargs):
             context = super(MahasiswaHavePenelitianDetailView, self).get_context_data(**kwargs)
             context['title'] = 'Update Data Mahasiswa'
@@ -97,10 +104,11 @@ class MahasiswaAutoComplete(autocomplete.Select2QuerySetView):
     def get_queryset(self):
         qs = Mahasiswa.objects.all()
 
-        if self.q :
+        if self.q:
             qs = qs.filter(nim__icontains=self.q)
 
         return qs
+
 
 class PenelitianBaseFromMahasiswaAutoComplete(autocomplete.Select2QuerySetView):
     def get_queryset(self):
@@ -109,14 +117,17 @@ class PenelitianBaseFromMahasiswaAutoComplete(autocomplete.Select2QuerySetView):
         mhs_pk = self.forwarded.get('mhs', None)
         # debug
         # print('nilai mhs_pk -> {} '.format(mhs_pk))
-        if mhs_pk :
+        qs = None
+        if mhs_pk:
             mhs_instance = semua_mahasiswa.get(pk=mhs_pk)
             list_penelitian_mhs_instance = Penelitian.objects.filter(mahasiswa=mhs_instance)
             # surat_izin_on_db = SuratIzinPenelitianMahasiswa.objects.filter(mahasiswa=mhs_instance)
-            list_penelitian_mhs_instance_not_exists_in_suratizinpenelitianmahasiswa = list_penelitian_mhs_instance.exclude(suratizinpenelitianmahasiswa__mahasiswa=mhs_instance)
-            qs = list_penelitian_mhs_instance_not_exists_in_suratizinpenelitianmahasiswa
+            list_penelitian_mhs_not_exists_in_suratizinpenelitianmahasiswa = list_penelitian_mhs_instance.exclude(
+                suratizinpenelitianmahasiswa__mahasiswa=mhs_instance
+            )
+            qs = list_penelitian_mhs_not_exists_in_suratizinpenelitianmahasiswa
 
-        if self.q :
+        if self.q:
             qs = qs.filter(judul__icontains=self.q)
 
         return qs

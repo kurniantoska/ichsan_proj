@@ -26,8 +26,8 @@ urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='home.html'), name='home'),
     url(r'^cari-data/$', TemplateView.as_view(template_name='halamandata.html'), name='cari-data'),
     url(r'^admin/', admin.site.urls),
-    url(r'^lemlit/', include('lemlit.urls', namespace='lemlit')),
-    url(r'^data/', include('base.urls', namespace='base')),
+    url(r'^lemlit/', include('lemlit.urls')),
+    url(r'^data/', include('base.urls')),
     url(r'^api-mhs-get/$', MahasiswaAutoComplete.as_view(), name='autocomplete-mahasiswa'),
     url(r'^api-penelitian-get/$', PenelitianBaseFromMahasiswaAutoComplete.as_view(), name='autocomplete-penelitian-base-mahasiswa'),
 

@@ -6,9 +6,10 @@ from dal import forward
 from django import forms
 from base.models import Mahasiswa, Penelitian
 from .models import (
-SuratIzinPenelitianMahasiswa,
-SuratKeteranganPenelitianMahasiswa
+    SuratIzinPenelitianMahasiswa,
+    SuratKeteranganPenelitianMahasiswa
 )
+
 
 class SuraIzinPenelitianMahasiswaCreateForm(forms.ModelForm):
     mahasiswa = forms.ModelChoiceField(
@@ -17,8 +18,11 @@ class SuraIzinPenelitianMahasiswaCreateForm(forms.ModelForm):
     )
 
     penelitian = forms.ModelChoiceField(
-        queryset = Penelitian.objects.all(),
-        widget = autocomplete.ModelSelect2(url='autocomplete-penelitian-base-mahasiswa', forward=(forward.Field('mahasiswa','mhs'),))
+        queryset=Penelitian.objects.all(),
+        widget=autocomplete.ModelSelect2(
+            url='autocomplete-penelitian-base-mahasiswa',
+            forward=(forward.Field('mahasiswa', 'mhs'), )
+        )
     )
 
     class Meta:
