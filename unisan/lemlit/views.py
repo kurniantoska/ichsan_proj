@@ -34,6 +34,7 @@ class SuratKeteranganPenelitianMahasiswaCreateView(CreateView):
 
 
 class SuratIzinPenelitianMahasiswaUpdateView(UpdateView):
+    """Surat izin penelitian mahasiswa"""
     model = SuratIzinPenelitianMahasiswa
     form_class = SuraIzinPenelitianMahasiswaCreateForm
     template_name = 'form-surat-izin-penelitian-mhs.html'
