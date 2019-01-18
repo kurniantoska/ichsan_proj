@@ -24,3 +24,7 @@ class PenelitianCreateForm(forms.ModelForm):
         widgets = {
             'mahasiswa': autocomplete.ModelSelect2Multiple(url='autocomplete-mahasiswa')
         }
+
+
+class DaftarDosenForm(forms.ModelForm):
+    pass

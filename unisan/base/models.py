@@ -81,7 +81,7 @@ class Mahasiswa(models.Model):
 
 class Dosen(models.Model):
     gelar_depan = models.CharField(max_length=20)
-    nama = models.CharField(max_length=120)
+    nama_lengkap = models.CharField(max_length=120)
     gelar_belakang = models.CharField(max_length=20)
     nidn = models.CharField(max_length=20, default='1234567890')
     email = models.EmailField(null=True, blank=True)
