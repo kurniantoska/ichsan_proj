@@ -1,6 +1,7 @@
 Django
 django-autocomplete-light
 django-crispy-forms
+django-allauth
 olefile
 Pillow
 pytz

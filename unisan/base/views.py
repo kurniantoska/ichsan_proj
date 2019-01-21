@@ -14,12 +14,16 @@ from .models import Mahasiswa, Penelitian
 from lemlit.models import SuratIzinPenelitianMahasiswa
 
 
+class Profile(DetailView):
+    template_name = 'profiles.html'
+
+
 class MahasiswaCreateView(CreateView):
     form_class = MahasiswaCreateForm
     template_name = 'mahasiswa-form.html'
 
     def get_context_data(self, **kwargs):
-        context = super(MahasiswaCreateView, self).get_context_data( **kwargs)
+        context = super(MahasiswaCreateView, self).get_context_data(**kwargs)
         context['title'] = 'Tambah Data Mahasiswa'
         return context
 
@@ -32,7 +36,7 @@ class MahasiswaUpdateView(UpdateView):
         return Mahasiswa.objects.all()
 
     def get_context_data(self, **kwargs):
-        context = super(MahasiswaUpdateView, self).get_context_data( **kwargs)
+        context = super(MahasiswaUpdateView, self).get_context_data(**kwargs)
         context['title'] = 'Update Data Mahasiswa'
         return context
 
