@@ -1,4 +1,5 @@
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from django.views.generic import DetailView
 from django.views.generic.list import ListView
@@ -13,7 +14,7 @@ from .forms import (
 )
 
 
-class SuratIzinPenelitianMahasiswaCreateView(CreateView):
+class SuratIzinPenelitianMahasiswaCreateView(LoginRequiredMixin, CreateView):
     form_class = SuraIzinPenelitianMahasiswaCreateForm
     template_name = 'form-surat-izin-penelitian-mhs.html'
 
@@ -23,7 +24,7 @@ class SuratIzinPenelitianMahasiswaCreateView(CreateView):
         return context
 
 
-class SuratKeteranganPenelitianMahasiswaCreateView(CreateView):
+class SuratKeteranganPenelitianMahasiswaCreateView(LoginRequiredMixin, CreateView):
     form_class = SuraKeteranganPenelitianMahasiswaCreateForm
     template_name = 'form-surat-izin-penelitian-mhs.html'
 
@@ -33,7 +34,7 @@ class SuratKeteranganPenelitianMahasiswaCreateView(CreateView):
         return context
 
 
-class SuratIzinPenelitianMahasiswaUpdateView(UpdateView):
+class SuratIzinPenelitianMahasiswaUpdateView(LoginRequiredMixin, UpdateView):
     """Surat izin penelitian mahasiswa"""
     model = SuratIzinPenelitianMahasiswa
     form_class = SuraIzinPenelitianMahasiswaCreateForm
@@ -45,7 +46,7 @@ class SuratIzinPenelitianMahasiswaUpdateView(UpdateView):
         return context
 
 
-class SuratIzinPenelitianMahasiswaDeleteView(DeleteView):
+class SuratIzinPenelitianMahasiswaDeleteView(LoginRequiredMixin, DeleteView):
     model = SuratIzinPenelitianMahasiswa
     success_url = reverse_lazy('lemlit:list-surat-penelitian-mahasiswa')
 

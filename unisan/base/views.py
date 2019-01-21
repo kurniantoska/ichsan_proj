@@ -1,13 +1,13 @@
 from dal import autocomplete
 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.shortcuts import render
-
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from django.views.generic import DetailView
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView
 from django.views.generic.edit import UpdateView
+
 from .forms import MahasiswaCreateForm, PenelitianCreateForm
 
 from .models import Mahasiswa, Penelitian
@@ -18,7 +18,7 @@ class Profile(DetailView):
     template_name = 'profiles.html'
 
 
-class MahasiswaCreateView(CreateView):
+class MahasiswaCreateView(LoginRequiredMixin, CreateView):
     form_class = MahasiswaCreateForm
     template_name = 'mahasiswa-form.html'
 
@@ -28,7 +28,7 @@ class MahasiswaCreateView(CreateView):
         return context
 
 
-class MahasiswaUpdateView(UpdateView):
+class MahasiswaUpdateView(LoginRequiredMixin, UpdateView):
     form_class = MahasiswaCreateForm
     template_name = 'mahasiswa-form.html'
 
@@ -73,12 +73,12 @@ class MahasiswaDetailView(DetailView):
         return Mahasiswa.objects.all()
 
 
-class PenelitianCreateView(CreateView):
+class PenelitianCreateView(LoginRequiredMixin, CreateView):
     form_class = PenelitianCreateForm
     template_name = 'penelitian-form.html'
 
 
-class PenelitianUpdateView(UpdateView):
+class PenelitianUpdateView(LoginRequiredMixin, UpdateView):
     model = Penelitian
     form_class = PenelitianCreateForm
     template_name = 'penelitian-form.html'
