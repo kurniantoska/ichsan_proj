@@ -1,6 +1,10 @@
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 
+from django.core.exceptions import PermissionDenied
+
+from base.utils import check_operator
+
 from django.views.generic import DetailView
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -18,6 +22,7 @@ class SuratIzinPenelitianMahasiswaCreateView(LoginRequiredMixin, CreateView):
     form_class = SuraIzinPenelitianMahasiswaCreateForm
     template_name = 'form-surat-izin-penelitian-mhs.html'
 
+    @check_operator
     def get_context_data(self, **kwargs):
         context = super(SuratIzinPenelitianMahasiswaCreateView, self).get_context_data()
         context['status'] = 'Pengajuan'
@@ -28,6 +33,7 @@ class SuratKeteranganPenelitianMahasiswaCreateView(LoginRequiredMixin, CreateVie
     form_class = SuraKeteranganPenelitianMahasiswaCreateForm
     template_name = 'form-surat-izin-penelitian-mhs.html'
 
+    @check_operator
     def get_context_data(self, **kwargs):
         context = super(SuratKeteranganPenelitianMahasiswaCreateView, self).get_context_data()
         context['status'] = 'Pengajuan Surat Keterangan'
@@ -40,6 +46,7 @@ class SuratIzinPenelitianMahasiswaUpdateView(LoginRequiredMixin, UpdateView):
     form_class = SuraIzinPenelitianMahasiswaCreateForm
     template_name = 'form-surat-izin-penelitian-mhs.html'
 
+    @check_operator
     def get_context_data(self, **kwargs):
         context = super(SuratIzinPenelitianMahasiswaUpdateView, self).get_context_data()
         context['status'] = 'Edit'
@@ -49,6 +56,11 @@ class SuratIzinPenelitianMahasiswaUpdateView(LoginRequiredMixin, UpdateView):
 class SuratIzinPenelitianMahasiswaDeleteView(LoginRequiredMixin, DeleteView):
     model = SuratIzinPenelitianMahasiswa
     success_url = reverse_lazy('lemlit:list-surat-penelitian-mahasiswa')
+
+    @check_operator
+    def get_context_data(self, **kwargs):
+        context = super(SuratIzinPenelitianMahasiswaDeleteView, self).get_context_data()
+        return context
 
 
 class SuraIzinPenelitianMahasiswaListView(ListView):

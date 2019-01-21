@@ -13,6 +13,8 @@ from .forms import MahasiswaCreateForm, PenelitianCreateForm
 from .models import Mahasiswa, Penelitian
 from lemlit.models import SuratIzinPenelitianMahasiswa
 
+from base.utils import check_operator
+
 
 class Profile(DetailView):
     template_name = 'profiles.html'
@@ -22,6 +24,7 @@ class MahasiswaCreateView(LoginRequiredMixin, CreateView):
     form_class = MahasiswaCreateForm
     template_name = 'mahasiswa-form.html'
 
+    @check_operator
     def get_context_data(self, **kwargs):
         context = super(MahasiswaCreateView, self).get_context_data(**kwargs)
         context['title'] = 'Tambah Data Mahasiswa'
@@ -35,6 +38,7 @@ class MahasiswaUpdateView(LoginRequiredMixin, UpdateView):
     def get_queryset(self):
         return Mahasiswa.objects.all()
 
+    @check_operator
     def get_context_data(self, **kwargs):
         context = super(MahasiswaUpdateView, self).get_context_data(**kwargs)
         context['title'] = 'Update Data Mahasiswa'
@@ -77,11 +81,21 @@ class PenelitianCreateView(LoginRequiredMixin, CreateView):
     form_class = PenelitianCreateForm
     template_name = 'penelitian-form.html'
 
+    @check_operator
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data()
+        return context
+
 
 class PenelitianUpdateView(LoginRequiredMixin, UpdateView):
     model = Penelitian
     form_class = PenelitianCreateForm
     template_name = 'penelitian-form.html'
+
+    @check_operator
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data()
+        return context
 
 
 class PenelitianListView(ListView):
