@@ -33,6 +33,15 @@ urlpatterns = [
     url(r'^lemlit/', include('lemlit.urls')),
     url(r'^data/', include('base.urls')),
     url(r'^api-mhs-get/$', MahasiswaAutoComplete.as_view(), name='autocomplete-mahasiswa'),
-    url(r'^api-penelitian-get/$', PenelitianBaseFromMahasiswaAutoComplete.as_view(), name='autocomplete-penelitian-base-mahasiswa'),
+    url(
+        r'^api-penelitian-get/$',
+        PenelitianBaseFromMahasiswaAutoComplete.as_view(),
+        name='autocomplete-penelitian-base-mahasiswa'
+    ),
+    path(
+        'hibahpenelitian',
+        TemplateView.as_view(template_name='simple/base-simple.html'),
+        name='hibah-penelitian-home'
+    )
 
 ]

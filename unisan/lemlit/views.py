@@ -5,7 +5,7 @@ from django.core.exceptions import PermissionDenied
 
 from base.utils import check_operator
 
-from django.views.generic import DetailView
+from django.views.generic import DetailView, TemplateView
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
@@ -86,3 +86,7 @@ class CetakKuitansiSuratPenelitian(DetailView):
 class CetakSuratKeteranganPenelitianMahasiswa(DetailView):
     model = SuratIzinPenelitianMahasiswa
     template_name = "lemlit/cetak-surat-keterangan-penelitian-mahasiswa.html"
+
+
+class HibahPenelitianInternal(TemplateView):
+    pass
