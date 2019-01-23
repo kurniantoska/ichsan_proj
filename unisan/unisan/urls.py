@@ -24,6 +24,7 @@ from base.views import (
     Profile,
 )
 
+
 urlpatterns = [
     path('accounts/profile/', TemplateView.as_view(template_name='profiles.html'), name='profile'),
     path('accounts/', include('allauth.urls')),

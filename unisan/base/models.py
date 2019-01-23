@@ -1,4 +1,4 @@
-
+from django.conf import settings
 from django.db import models
 # from django.core.urlresolvers import reverse
 from django.urls import reverse
@@ -80,14 +80,26 @@ class Mahasiswa(models.Model):
 
 
 class Dosen(models.Model):
-    gelar_depan = models.CharField(max_length=20)
-    nama_lengkap = models.CharField(max_length=120)
+    gelar_depan = models.CharField(max_length=20, null=True, blank=True)
+    nama_lengkap = models.CharField(max_length=120, null=True, blank=True)
     gelar_belakang = models.CharField(max_length=20)
-    nidn = models.CharField(max_length=20, default='1234567890')
+    nidn = models.CharField(max_length=20, default='0123', unique=True)
     email = models.EmailField(null=True, blank=True)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, blank=True, null=True)
+    program_studi = models.CharField(choices=Mahasiswa.FAKULTAS_N_PRODI_CHOICES, max_length=30, blank=True, null=True)
+
+    def get_fakultas(self):
+        d = dict(Mahasiswa.FAKULTAS_N_PRODI_CHOICES)
+        for k, v in d.items():
+            v = dict(v)
+            for k1, v1 in v.items():
+                if self.program_studi == k1:
+                    return k
+            if self.program_studi == k:
+                return k
 
     def __str__(self):
-        return self.nidn
+        return self.nidn + self.nama_lengkap
 
 
 class Penelitian(models.Model):
@@ -95,6 +107,7 @@ class Penelitian(models.Model):
     mahasiswa = models.ManyToManyField(Mahasiswa, blank=True)
     judul = models.CharField(unique=True, max_length=200)
     lokasi = models.CharField(max_length=120, null=True, blank=True)
+    berkas_publikasi = models.FileField(upload_to='publikasi', null=True, blank=True)
 
     def get_absolute_url(self):
         return reverse('base:detail-penelitian', kwargs={'pk': self.id})
