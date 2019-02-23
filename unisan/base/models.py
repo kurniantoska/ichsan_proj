@@ -3,43 +3,10 @@ from django.db import models
 # from django.core.urlresolvers import reverse
 from django.urls import reverse
 from base.utils import get_program_studi_full_name
+from utils import FAKULTAS_N_PRODI_CHOICES
 
 
 class Mahasiswa(models.Model):
-    FAKULTAS_N_PRODI_CHOICES = (
-        ('Fakultas Ekonomi', (
-            ('ak', 'Akuntansi'),
-            ('man', 'Manajemen'),
-            )
-         ),
-        ('Fakultas Ilmu Komputer', (
-            ('ti', 'Teknik Informatika'),
-            ('ti', '-'),
-        )
-        ),
-        ('Fakultas Hukum', (
-            ('hu', 'Ilmu Hukum'),
-            ('hu', '-'),
-        )
-        ),
-        ('Fakultas Teknik', (
-            ('ar', 'Arsitektur'),
-            ('el', 'Elektro'),
-        )
-        ),
-        ('Fakultas Ilmu Sosial, Ilmu Politik', (
-            ('ko', 'Komunikasi'),
-            ('ip', 'Ilmu Pemerintahan'),
-        )
-        ),
-        ('Fakultas Pertanian', (
-            ('agb', 'Agribisnis'),
-            ('agr', 'Agroteknologi'),
-            ('thp', 'Teknologi Hasil Pertanian'),
-        ),
-        )
-    )
-
     nama = models.CharField(max_length=120)
     nim = models.CharField(unique=True, max_length=15)
     program_studi = models.CharField(max_length=30, choices=FAKULTAS_N_PRODI_CHOICES)
@@ -86,10 +53,10 @@ class Dosen(models.Model):
     nidn = models.CharField(max_length=20, default='0123', unique=True)
     email = models.EmailField(null=True, blank=True)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, blank=True, null=True)
-    program_studi = models.CharField(choices=Mahasiswa.FAKULTAS_N_PRODI_CHOICES, max_length=30, blank=True, null=True)
+    program_studi = models.CharField(choices=FAKULTAS_N_PRODI_CHOICES, max_length=30, blank=True, null=True)
 
     def get_fakultas(self):
-        d = dict(Mahasiswa.FAKULTAS_N_PRODI_CHOICES)
+        d = dict(FAKULTAS_N_PRODI_CHOICES)
         for k, v in d.items():
             v = dict(v)
             for k1, v1 in v.items():

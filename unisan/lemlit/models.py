@@ -26,7 +26,7 @@ class SuratIzinPenelitianMahasiswa(models.Model):
     mahasiswa = models.ForeignKey(Mahasiswa, null=True, blank=True, on_delete=models.CASCADE)
     penelitian = models.ForeignKey(Penelitian, on_delete=models.CASCADE)
     nama_instansi = models.CharField(max_length=80)
-    tujuan_surat = models.CharField(max_length=20)
+    tujuan_surat = models.CharField(max_length=150)
     created = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     updated = models.DateTimeField(auto_now=True, null=True, blank=True)
     disetujui = models.BooleanField(default=False)
@@ -82,7 +82,7 @@ class StrukturManajemen(models.Model):
     jabatan = models.CharField(max_length=30)
 
     def __str__(self):
-        return self.nama_dosen.nama
+        return self.nama_dosen.nama_lengkap
 
 
 class PetugasAdmininistrasi(models.Model):

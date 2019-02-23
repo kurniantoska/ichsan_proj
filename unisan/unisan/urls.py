@@ -26,6 +26,7 @@ from base.views import (
 
 
 urlpatterns = [
+    path('', include('penelitiankompetitif.urls')),
     path('accounts/profile/', TemplateView.as_view(template_name='profiles.html'), name='profile'),
     path('accounts/', include('allauth.urls')),
     url(r'^$', TemplateView.as_view(template_name='home.html'), name='home'),
