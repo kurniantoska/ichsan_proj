@@ -107,3 +107,6 @@ unisan/.idea/
 # my apps settings
 settings.py
 db.sqlite3
+unisan/static/static-only/
+unisan/static/static-only/*
+unisan/static/static-only
