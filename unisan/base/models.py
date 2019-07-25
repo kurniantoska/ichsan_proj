@@ -25,7 +25,7 @@ class Mahasiswa(models.Model):
         return reverse('base:update-mahasiswa', kwargs={'pk': self.id})
 
     def get_fakultas(self):
-        d = dict(self.FAKULTAS_N_PRODI_CHOICES)
+        d = dict(FAKULTAS_N_PRODI_CHOICES)
         for k, v in d.items():
             v = dict(v)
             for k1, v1 in v.items():
